@@ -1,4 +1,4 @@
-package com.teamD.bean;
+package com.teamD.entity;
 
 
 public class Student {

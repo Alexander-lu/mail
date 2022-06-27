@@ -1,4 +1,4 @@
-package com.teamD.service;
+package com.teamD.Service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;

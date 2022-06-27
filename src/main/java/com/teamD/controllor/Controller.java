@@ -1,27 +1,27 @@
-package com.teamD;
+package com.teamD.controllor;
 
-import com.teamD.bean.Student;
-import com.teamD.mysql.Mysql;
+import com.teamD.entity.Student;
+import com.teamD.mapper.Mysql;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.*;
-import com.teamD.service.FansQueryService;
+import com.teamD.Service.FansQueryService;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Map;
 /**
-*
+*控制器
  * @author teamD
  * @version 1.0
  * 20220628
  **/
-@MapperScan("com/teamD/mysql")
+@MapperScan("com/teamD/mapper")
 @RestController
 @EnableAutoConfiguration
-@ComponentScan("com/teamD/service")
+@ComponentScan("com/teamD/Service")
 @RequestMapping("/api")
 public class Controller {
     @Autowired

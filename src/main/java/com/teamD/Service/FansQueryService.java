@@ -1,4 +1,4 @@
-package com.teamD.service;
+package com.teamD.Service;
 
 import org.springframework.stereotype.Service;
 

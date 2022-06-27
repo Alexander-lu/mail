@@ -1,6 +1,6 @@
-package com.teamD.mysql;
+package com.teamD.mapper;
 
-import com.teamD.bean.Student;
+import com.teamD.entity.Student;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
