@@ -15,7 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 import java.util.List;
 import java.util.Map;
-
+/**
+*myApplication会自动扫描com.teadD包下的所以java文件
+ **/
 @MapperScan("com/teamD/dao")
 @RestController
 @EnableAutoConfiguration
