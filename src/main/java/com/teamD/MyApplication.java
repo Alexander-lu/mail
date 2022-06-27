@@ -1,21 +1,25 @@
-import bean.Student;
-import dao.StudentDao;
+package com.teamD;
+
+import com.teamD.bean.Student;
+import com.teamD.dao.StudentDao;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.*;
-import service.FansQueryService;
+import com.teamD.service.FansQueryService;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
 import java.util.List;
 import java.util.Map;
 
-@MapperScan("dao")
+@MapperScan("com/teamD/dao")
 @RestController
 @EnableAutoConfiguration
-@ComponentScan("service")
+@ComponentScan("com/teamD/service")
 @RequestMapping("/api")
 public class MyApplication {
     @Autowired
@@ -88,6 +92,8 @@ public class MyApplication {
         return responseJson;
     }
     public static void main(String[] args) {
-        SpringApplication.run(MyApplication.class, args);
+        ConfigurableApplicationContext applicationContext = SpringApplication.run(MyApplication.class, args);
+        DataSource bean = applicationContext.getBean(DataSource.class);
+        System.out.println(bean);
     }
 }

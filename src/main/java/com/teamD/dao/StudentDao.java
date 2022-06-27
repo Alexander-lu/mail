@@ -1,6 +1,6 @@
-package dao;
+package com.teamD.dao;
 
-import bean.Student;
+import com.teamD.bean.Student;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;

@@ -1,4 +1,5 @@
-package bean;
+package com.teamD.bean;
+
 
 public class Student {
     private String username;
