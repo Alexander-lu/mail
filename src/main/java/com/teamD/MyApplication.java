@@ -33,10 +33,10 @@ public class MyApplication {
     private FansQueryService fansQueryService;
     /**
      * 发送邮件
-     * @param data
-     * @param response
-     * @return
-     * @throws Exception
+     * @param data mail，保存在一个Map里
+     * @param response http回复
+     * @return 登陆结果，以json字符串返回
+     * @throws Exception 发送邮件异常
      */
     @PostMapping("/sendMail")
     public String sendMail(@RequestBody Map<String, String> data, HttpServletResponse response) throws Exception {
@@ -46,9 +46,9 @@ public class MyApplication {
     }
     /**
      * 往数据库里增加账号密码
-     * @param data
-     * @param response
-     * @return
+     * @param data username和password，保存在一个Map里
+     * @param response http回复
+     * @return 登陆结果，以json字符串返回
      */
     @PostMapping("/insert")
     public String insert(@RequestBody Map<String, String> data, HttpServletResponse response) {
@@ -62,8 +62,8 @@ public class MyApplication {
     /**
      * 往数据库里更改账号密码
      * @param data
-     * @param response
-     * @return
+     * @param response http回复
+     * @return 登陆结果，以json字符串返回
      */
     @PostMapping("/update")
     public String update(@RequestBody Map<String, String> data, HttpServletResponse response) {
@@ -75,9 +75,9 @@ public class MyApplication {
     }
     /**
      * 往数据库里删除账号密码
-     * @param data
-     * @param response
-     * @return
+     * @param data username和password
+     * @param response http回复
+     * @return 登陆结果，以json字符串返回
      */
     @PostMapping("/delete")
     public String delete(@RequestBody Map<String, String> data, HttpServletResponse response) {
@@ -94,7 +94,7 @@ public class MyApplication {
 
     /**
      * 登陆
-     * @param data     用户名和密码，保存在一个Map里
+     * @param data username和password，保存在一个Map里
      * @param response HTTP回复
      * @return 登陆结果，以json字符串返回
      */
@@ -120,7 +120,6 @@ public class MyApplication {
 
     /**
      * 启动服务器
-     * @param args
      */
     public static void main(String[] args) {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(MyApplication.class, args);
