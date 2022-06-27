@@ -17,20 +17,20 @@ import java.util.List;
 @EnableAutoConfiguration
 @ComponentScan("service")
 public class MyApplication {
-
     @Autowired
     private StudentDao dao;
     @Resource
     private FansQueryService fansQueryService;
+
     @GetMapping("/sendMail")
-    String inswwert() throws Exception {
+    String sendMail() throws Exception {
         fansQueryService.fansQuery();
         return "ok";
     }
 
     @GetMapping("/insert")
     String insert() {
-        Student s=new Student();
+        Student s = new Student();
         s.setName("a");
         s.setPassword("123456");
         dao.insertStudent(s);
@@ -39,13 +39,14 @@ public class MyApplication {
 
     @GetMapping("/update")
     String update() {
-        Student s=new Student();
+        Student s = new Student();
         s.setId(2);
         s.setName("b");
         s.setPassword("123456");
         dao.updateStudent(s);
         return "ok";
     }
+
     @GetMapping("/delete")
     String delete(Integer id) {
         dao.deleteStudent(id);
@@ -61,5 +62,4 @@ public class MyApplication {
     public static void main(String[] args) {
         SpringApplication.run(MyApplication.class, args);
     }
-
 }

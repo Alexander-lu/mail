@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
+
 @Service
 public class MailService {
     @Value("${spring.mail.username}")
@@ -15,16 +16,13 @@ public class MailService {
     @Resource
     private JavaMailSender mailSender;
 
-    public void sendHTMLMail(String to , String subject,String content) throws MessagingException {
-
+    public void sendHtmlMail(String to, String subject, String content) throws MessagingException {
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
-
         helper.setFrom(from);
         helper.setTo(to);
         helper.setSubject(subject);
-        helper.setText(content,true);
-
+        helper.setText(content, true);
         mailSender.send(message);
     }
 }
