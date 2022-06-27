@@ -25,27 +25,29 @@ public class MyApplication {
     @Resource
     private FansQueryService fansQueryService;
 
-    @GetMapping("/sendMail")
-    String sendMail() throws Exception {
-        fansQueryService.fansQuery();
-        return "ok";
+    @PostMapping("/sendMail")
+    public String sendMail(@RequestBody Map<String, String> data, HttpServletResponse response) throws Exception {
+        String mail = data.get("mail");
+        fansQueryService.fansQuery(mail);
+        return "{\"status\": \"good\"}";
     }
     //往数据库里增加账号密码
-    @GetMapping("/insert")
+    @PostMapping("/insert")
     public String insert(@RequestBody Map<String, String> data, HttpServletResponse response) {
         String username = data.get("username");
         String password = data.get("password");
-        Student newS = new Student(username,password);
+        String mail = data.get("mail");
+        Student newS = new Student(username,password,mail);
         dao.insertStudent(newS);
         return "{\"status\": \"good\"}";
     }
     //往数据库里更改账号密码
-    @GetMapping("/update")
+    @PostMapping("/update")
     public String update(@RequestBody Map<String, String> data, HttpServletResponse response) {
         String username = data.get("username");
         String password = data.get("password");
         Student newS = new Student(username,password);
-        dao.updateStudent(newS);
+        dao.updateStudent2(newS);
         return "{\"status\": \"good\"}";
     }
     //往数据库里删除账号密码

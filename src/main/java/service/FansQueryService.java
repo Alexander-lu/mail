@@ -9,8 +9,7 @@ public class FansQueryService {
     @Resource
     private MailService mailService;
 
-    public void fansQuery() throws Exception {
-        String to = "81604280@qq.com";
+    public void fansQuery(String to) throws Exception {
         String subject = "欢迎";
         String content = "<html>\n" +
                 "<body>\n" +
