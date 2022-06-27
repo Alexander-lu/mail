@@ -31,14 +31,25 @@ public class MyApplication {
     private StudentDao dao;
     @Resource
     private FansQueryService fansQueryService;
-
+    /**
+     * 发送邮件
+     * @param data
+     * @param response
+     * @return
+     * @throws Exception
+     */
     @PostMapping("/sendMail")
     public String sendMail(@RequestBody Map<String, String> data, HttpServletResponse response) throws Exception {
         String mail = data.get("mail");
         fansQueryService.fansQuery(mail);
         return "{\"status\": \"good\"}";
     }
-    //往数据库里增加账号密码
+    /**
+     * 往数据库里增加账号密码
+     * @param data
+     * @param response
+     * @return
+     */
     @PostMapping("/insert")
     public String insert(@RequestBody Map<String, String> data, HttpServletResponse response) {
         String username = data.get("username");
@@ -48,7 +59,12 @@ public class MyApplication {
         dao.insertStudent(newS);
         return "{\"status\": \"good\"}";
     }
-    //往数据库里更改账号密码
+    /**
+     * 往数据库里更改账号密码
+     * @param data
+     * @param response
+     * @return
+     */
     @PostMapping("/update")
     public String update(@RequestBody Map<String, String> data, HttpServletResponse response) {
         String username = data.get("username");
@@ -57,7 +73,12 @@ public class MyApplication {
         dao.updateStudent2(newS);
         return "{\"status\": \"good\"}";
     }
-    //往数据库里删除账号密码
+    /**
+     * 往数据库里删除账号密码
+     * @param data
+     * @param response
+     * @return
+     */
     @PostMapping("/delete")
     public String delete(@RequestBody Map<String, String> data, HttpServletResponse response) {
         String username = data.get("username");
