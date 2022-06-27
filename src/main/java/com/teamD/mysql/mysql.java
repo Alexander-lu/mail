@@ -1,4 +1,4 @@
-package com.teamD.dao;
+package com.teamD.mysql;
 
 import com.teamD.bean.Student;
 import org.apache.ibatis.annotations.Mapper;
@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Update;
 import java.util.List;
 
 @Mapper
-public interface StudentDao {
+public interface mysql {
     //增
     @Update("INSERT into user(username,password,mail) VALUES(#{username},#{password},#{mail});")
     public void insertStudent(Student student);

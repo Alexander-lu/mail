@@ -1,7 +1,7 @@
 package com.teamD;
 
 import com.teamD.bean.Student;
-import com.teamD.dao.StudentDao;
+import com.teamD.mysql.mysql;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -21,14 +21,14 @@ import java.util.Map;
  * @version 1.0
  * 20220628
  **/
-@MapperScan("com/teamD/dao")
+@MapperScan("com/teamD/mysql")
 @RestController
 @EnableAutoConfiguration
 @ComponentScan("com/teamD/service")
 @RequestMapping("/api")
 public class MyApplication {
     @Autowired
-    private StudentDao dao;
+    private mysql mysql;
     @Resource
     private FansQueryService fansQueryService;
     /**
@@ -56,7 +56,7 @@ public class MyApplication {
         String password = data.get("password");
         String mail = data.get("mail");
         Student newS = new Student(username,password,mail);
-        dao.insertStudent(newS);
+        mysql.insertStudent(newS);
         return "{\"status\": \"good\"}";
     }
     /**
@@ -70,7 +70,7 @@ public class MyApplication {
         String username = data.get("username");
         String password = data.get("password");
         Student newS = new Student(username,password);
-        dao.updateStudent2(newS);
+        mysql.updateStudent2(newS);
         return "{\"status\": \"good\"}";
     }
     /**
@@ -82,13 +82,13 @@ public class MyApplication {
     @PostMapping("/delete")
     public String delete(@RequestBody Map<String, String> data, HttpServletResponse response) {
         String username = data.get("username");
-        dao.deleteStudent(username);
+        mysql.deleteStudent(username);
         return "{\"status\": \"good\"}";
     }
 
     @GetMapping("/select")
     List<Student> select() {
-        List<Student> students = dao.selectStudent();
+        List<Student> students = mysql.selectStudent();
         return students;
     }
 
@@ -103,7 +103,7 @@ public class MyApplication {
         String username = data.get("username");
         String password = data.get("password");
         String responseJson;
-        List<Student> students = dao.selectStudent();
+        List<Student> students = mysql.selectStudent();
         boolean ifExist = false;
         for (Student student : students) {
             if(student.getUsername().equals(username)&&student.getPassword().equals(password)){
