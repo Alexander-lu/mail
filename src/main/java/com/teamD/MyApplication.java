@@ -96,6 +96,7 @@ public class MyApplication {
         }
         return responseJson;
     }
+    //启动服务器
     public static void main(String[] args) {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(MyApplication.class, args);
         DataSource bean = applicationContext.getBean(DataSource.class);
