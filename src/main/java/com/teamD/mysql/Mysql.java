@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Update;
 import java.util.List;
 
 @Mapper
-public interface mysql {
+public interface Mysql {
     //增
     @Update("INSERT into user(username,password,mail) VALUES(#{username},#{password},#{mail});")
     public void insertStudent(Student student);

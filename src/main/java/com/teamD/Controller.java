@@ -1,22 +1,19 @@
 package com.teamD;
 
 import com.teamD.bean.Student;
-import com.teamD.mysql.mysql;
+import com.teamD.mysql.Mysql;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.*;
 import com.teamD.service.FansQueryService;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
 import java.util.List;
 import java.util.Map;
 /**
-*myApplication会自动扫描com.teadD包下的所有java文件
+*
  * @author teamD
  * @version 1.0
  * 20220628
@@ -28,7 +25,7 @@ import java.util.Map;
 @RequestMapping("/api")
 public class Controller {
     @Autowired
-    private mysql mysql;
+    private Mysql mysql;
     @Resource
     private FansQueryService fansQueryService;
     /**
