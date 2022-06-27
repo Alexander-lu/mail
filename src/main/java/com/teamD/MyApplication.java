@@ -96,7 +96,11 @@ public class MyApplication {
         }
         return responseJson;
     }
-    //启动服务器
+
+    /**
+     * 启动服务器
+     * @param args
+     */
     public static void main(String[] args) {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(MyApplication.class, args);
         DataSource bean = applicationContext.getBean(DataSource.class);
