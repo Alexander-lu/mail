@@ -65,7 +65,7 @@ public class MyApplication {
     /**
      * 登陆
      * @param data     用户名和密码，保存在一个Map里
-     * @param response HTTP回复，用于设置cookie
+     * @param response HTTP回复
      * @return 登陆结果，以json字符串返回
      */
     @PostMapping("/login")
