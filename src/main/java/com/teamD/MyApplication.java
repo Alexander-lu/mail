@@ -17,6 +17,9 @@ import java.util.List;
 import java.util.Map;
 /**
 *myApplication会自动扫描com.teadD包下的所以java文件
+ * @author teamD
+ * @version 1.0
+ * 20220628
  **/
 @MapperScan("com/teamD/dao")
 @RestController
