@@ -1,26 +1,23 @@
 package bean;
 
 public class Student {
-    // 1、私有化的成员变量、属性
-    private Integer id;
-
-    private String name;
+    private String username;
     private String password;
 
-    public Integer getId() {
-        return id;
+    public Student() {
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public Student(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -34,9 +31,8 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "id=" + id +
-                ", name=" + name +
-                ", password=" + password +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }

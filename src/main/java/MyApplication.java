@@ -6,11 +6,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import service.FansQueryService;
-
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import java.util.Map;
 
 @MapperScan("dao")
 @RestController
@@ -27,30 +30,30 @@ public class MyApplication {
         fansQueryService.fansQuery();
         return "ok";
     }
-
+    //往数据库里增加账号密码
     @GetMapping("/insert")
-    String insert() {
-        Student s = new Student();
-        s.setName("a");
-        s.setPassword("123456");
-        dao.insertStudent(s);
-        return "ok";
+    public String insert(@RequestBody Map<String, String> data, HttpServletResponse response) {
+        String username = data.get("username");
+        String password = data.get("password");
+        Student newS = new Student(username,password);
+        dao.insertStudent(newS);
+        return "{\"status\": \"good\"}";
     }
-
+    //往数据库里更改账号密码
     @GetMapping("/update")
-    String update() {
-        Student s = new Student();
-        s.setId(2);
-        s.setName("b");
-        s.setPassword("123456");
-        dao.updateStudent(s);
-        return "ok";
+    public String update(@RequestBody Map<String, String> data, HttpServletResponse response) {
+        String username = data.get("username");
+        String password = data.get("password");
+        Student newS = new Student(username,password);
+        dao.updateStudent(newS);
+        return "{\"status\": \"good\"}";
     }
-
-    @GetMapping("/delete")
-    String delete(Integer id) {
-        dao.deleteStudent(id);
-        return "ok";
+    //往数据库里删除账号密码
+    @PostMapping("/delete")
+    public String delete(@RequestBody Map<String, String> data, HttpServletResponse response) {
+        String username = data.get("username");
+        dao.deleteStudent(username);
+        return "{\"status\": \"good\"}";
     }
 
     @GetMapping("/select")
@@ -59,6 +62,31 @@ public class MyApplication {
         return students;
     }
 
+    /**
+     * 登陆
+     * @param data     用户名和密码，保存在一个Map里
+     * @param response HTTP回复，用于设置cookie
+     * @return 登陆结果，以json字符串返回
+     */
+    @PostMapping("/login")
+    public String login(@RequestBody Map<String, String> data, HttpServletResponse response) {
+        String username = data.get("username");
+        String password = data.get("password");
+        String responseJson;
+        List<Student> students = dao.selectStudent();
+        boolean ifExist = false;
+        for (Student student : students) {
+            if(student.getUsername().equals(username)&&student.getPassword().equals(password)){
+                ifExist = true;
+            }
+        }
+        if(ifExist){
+            responseJson = "{\"status\": \"good\"}";
+        }else {
+            responseJson = "{\"status\": \"bad\", \"errMsg\": \"用户名密码错误\"}";
+        }
+        return responseJson;
+    }
     public static void main(String[] args) {
         SpringApplication.run(MyApplication.class, args);
     }

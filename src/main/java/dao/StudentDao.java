@@ -10,19 +10,19 @@ import java.util.List;
 @Mapper
 public interface StudentDao {
     //增
-    @Update("INSERT into student(name,password) VALUES(#{name},#{password});")
+    @Update("INSERT into student(username,password) VALUES(#{username},#{password});")
     public boolean insertStudent(Student student);
 
     //删
-    @Update("delete from student where id=#{id};")
-    public boolean deleteStudent(Integer id);
+    @Update("delete from student where username=#{username};")
+    public boolean deleteStudent(String username);
 
     //改
-    @Update("update student set name=#{name},password=#{password} where id=#{id};")
+    @Update("update student set username=#{username},password=#{password} where username=#{username};")
     public boolean updateStudent(Student student);
 
     //查
-    @Select("SELECT * FROM `student`;")
+    @Select("SELECT * FROM `user`;")
     public List<Student> selectStudent();
 
 }
