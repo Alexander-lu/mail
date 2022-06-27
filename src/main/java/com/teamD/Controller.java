@@ -26,7 +26,7 @@ import java.util.Map;
 @EnableAutoConfiguration
 @ComponentScan("com/teamD/service")
 @RequestMapping("/api")
-public class MyApplication {
+public class Controller {
     @Autowired
     private mysql mysql;
     @Resource
@@ -116,14 +116,5 @@ public class MyApplication {
             responseJson = "{\"status\": \"bad\", \"errMsg\": \"用户名密码错误\"}";
         }
         return responseJson;
-    }
-
-    /**
-     * 启动服务器
-     */
-    public static void main(String[] args) {
-        ConfigurableApplicationContext applicationContext = SpringApplication.run(MyApplication.class, args);
-        DataSource bean = applicationContext.getBean(DataSource.class);
-        System.out.println(bean);
     }
 }
