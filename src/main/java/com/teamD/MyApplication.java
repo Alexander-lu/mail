@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 import java.util.List;
 import java.util.Map;
 /**
-*myApplication会自动扫描com.teadD包下的所以java文件
+*myApplication会自动扫描com.teadD包下的所有java文件
  * @author teamD
  * @version 1.0
  * 20220628
