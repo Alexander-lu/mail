@@ -22,7 +22,6 @@ import java.util.Map;
 @RestController
 @EnableAutoConfiguration
 @ComponentScan("com/teamD/Service")
-@RequestMapping("/api")
 public class Controller {
     @Autowired
     private Mysql mysql;

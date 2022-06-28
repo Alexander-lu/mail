@@ -6,7 +6,8 @@ module.exports = {
         // https://cli.vuejs.org/guide/webpack.html
         // https://webpack.js.org/configuration/dev-server/#devserverproxy
         '/api': {
-          target: 'http://localhost:8080'
+          target: 'http://localhost:8080',
+          pathRewrite: { '^/api': '' },
         }
       }
     }
