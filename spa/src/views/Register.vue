@@ -1,11 +1,11 @@
 <template>
-<div>  <p>login</p></div>
+<div>  <p>欢迎回来，！</p></div>
    
 </template>
 
 <script>
 export default {
-  name: "Login",
+  name: "Register",
   data() {
     return {
     };
