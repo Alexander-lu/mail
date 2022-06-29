@@ -5,12 +5,15 @@
 3，在mysql里面新建数据库：pdf     
 4，在数据库pdf里面新建表user   
 5，表user里面应该包含username,paasword和mail三个字段    
-![image](https://user-images.githubusercontent.com/102196935/176362323-59a72ea0-a78e-489a-93f3-36550b4b3565.png)
+![image](https://user-images.githubusercontent.com/102196935/176362323-59a72ea0-a78e-489a-93f3-36550b4b3565.png)  
+注：这些都可以在src/resources/application.properties里面更改，不一定非要用上面的配置
 
-Vue版本：2.0
-在spa文件夹里:  
-npm ci   
-npm run serve  
-npm run build  
+Vue版本：2.0  
+启动服务器:
+1,在spa文件夹里:npm ci   
+2,npm run serve  
+3,npm run build  
 
 jdk版本:11
+
+SpringBoot版本：2.7.1
