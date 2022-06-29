@@ -17,7 +17,9 @@
 <el-input placeholder="请输入账号" v-model="username" clearable></el-input>
 <el-input placeholder="请输入密码" v-model="password" show-password></el-input>
 <el-input placeholder="请输入邮箱地址" v-model="mail"  clearable></el-input>
-<el-button type="primary" icon="el-icon-thumb" @click="register" >点我注册</el-button>
+<button  @click="register" type="button" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 点我注册
+</button>
 </el-main>
 <el-footer>
 <div>
