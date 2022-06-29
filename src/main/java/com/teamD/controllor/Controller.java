@@ -13,14 +13,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Map;
 /**
-*控制器
+*Controller则负责对数据和页面进行协调
+ * MapperScan("com/teamD/mapper")表明需要在mapper文件里面扫描Mysql这个类
+ * ComponentScan("com/teamD/Service")表明需要在Service文件夹里扫描FansQueryService这个类
  * @author teamD
  * @version 1.0
  * 20220628
  **/
-@MapperScan("com/teamD/mapper")
 @RestController
 @EnableAutoConfiguration
+@MapperScan("com/teamD/mapper")
 @ComponentScan("com/teamD/Service")
 public class Controller {
     @Autowired
@@ -41,7 +43,7 @@ public class Controller {
         return "{\"status\": \"good\"}";
     }
     /**
-     * 往数据库里增加账号密码
+     * 往数据库里增加账号密码邮箱
      * @param data username和password，保存在一个Map里
      * @param response http回复
      * @return 登陆结果，以json字符串返回
@@ -70,7 +72,7 @@ public class Controller {
         return "{\"status\": \"good\"}";
     }
     /**
-     * 往数据库里删除账号密码
+     * 往数据库里删除账号
      * @param data username和password
      * @param response http回复
      * @return 登陆结果，以json字符串返回
@@ -82,6 +84,10 @@ public class Controller {
         return "{\"status\": \"good\"}";
     }
 
+    /**
+     * 查看数据库的所有数据
+     * @return 数据库的所有数据
+     */
     @GetMapping("/select")
     List<Student> select() {
         List<Student> students = mysql.selectStudent();

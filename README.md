@@ -17,3 +17,5 @@ Vue版本：2.0
 jdk版本:11
 
 SpringBoot版本：2.7.1
+
+MVC设计模式——Model是数据，View是页面呈现，Controller则负责对两者进行协调。  

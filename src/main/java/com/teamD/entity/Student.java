@@ -1,6 +1,11 @@
 package com.teamD.entity;
 
-
+/**
+ *Student是用于与数据库传输数据的工具类
+ * @author teamD
+ * @version 1.0
+ * 20220628
+ **/
 public class Student {
     private String username;
     private String password;

@@ -6,7 +6,12 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
-
+/**
+ *Mysql是处理数据库的类
+ * @author teamD
+ * @version 1.0
+ * 20220628
+ **/
 @Mapper
 public interface Mysql {
     //增
