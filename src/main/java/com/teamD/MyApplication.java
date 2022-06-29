@@ -23,8 +23,6 @@ public class MyApplication {
      * main方法用于启动应用程序
      */
     public static void main(String[] args) {
-        ConfigurableApplicationContext applicationContext = SpringApplication.run(MyApplication.class, args);
-        DataSource bean = applicationContext.getBean(DataSource.class);
-        System.out.println(bean);
+        SpringApplication.run(MyApplication.class, args);
     }
 }
