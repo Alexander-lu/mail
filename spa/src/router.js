@@ -5,29 +5,65 @@ import Login from './views/Login'
 import Main from './views/main'
 import Error403 from './views/403.vue'
 import Error404 from './views/404.vue'
-import permission from './views/Permission.vue'
+import Permission from './views/Permission.vue'
+import Dynasty from './views/dynasty.vue'
+import Qrcode from './views/qrcode.vue'
+import Morse from './views/morse.vue'
+import Encdec from './views/encdec.vue'
+import Daxie from './views/daxie.vue'
+import Hexstr from './views/hexstr.vue'
 Vue.use(Router)
 export default new Router({
     routes: [
-        {
-            path: '/register',
-            name: 'Register',
-            component: Register
-        },
         {
             path: '/403',
             name: '403',
             component: Error403
         },
         {
-            path: '/permission',
-            name: 'Permission',
-            component: permission
-        },
-        {
             path: '/404',
             name: '404',
             component: Error404
+        },
+        {
+            path: '/register',
+            name: 'Register',
+            component: Register
+        },
+        {
+            path: '/hexstr',
+            name: 'Hexstr',
+            component: Hexstr
+        },
+        {
+            path: '/daxie',
+            name: 'Daxie',
+            component: Daxie
+        },
+        {
+            path: '/encdec',
+            name: 'Encdec',
+            component: Encdec
+        },
+        {
+            path: '/morse',
+            name: 'Morse',
+            component: Morse
+        },
+        {
+            path: '/permission',
+            name: 'Permission',
+            component: Permission
+        },
+        {
+            path: '/qrcode',
+            name: 'Qrcode',
+            component: Qrcode
+        },
+        {
+            path: '/dynasty',
+            name: 'Dynasty',
+            component: Dynasty
         },
         {
             path: '/login',
@@ -41,7 +77,7 @@ export default new Router({
         },
         {
             path: '*',
-            redirect: '/main'
+            redirect: '/404'
         }
     ]
 });
