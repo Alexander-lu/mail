@@ -9,6 +9,6 @@
 
 Vue版本：2.0
 在spa文件夹里:
-npm ci
-npm run serve
-npm run build
+npm ci   
+npm run serve  
+npm run build  
