@@ -12,3 +12,4 @@ Vue版本：2.0
 npm ci   
 npm run serve  
 npm run build  
+jdk11
