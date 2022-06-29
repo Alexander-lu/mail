@@ -50,309 +50,50 @@
         <div class="col-sm-6 col-md-4 classOne">
           <div class="thumbnail">
             <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
+            <h3 class='blockOne'>url转pdf</h3>
+            <a href="#/dynasty" class="btn btn-primary" role="button">进入</a>
           </div>
         </div>
         <div class="col-sm-6 col-md-4 classOne">
           <div class="thumbnail">
             <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
+            <h3 class='blockOne'>朝代表</h3>
+            <a href="#/dynasty" class="btn btn-primary" role="button">进入</a>
           </div>
         </div>
         <div class="col-sm-6 col-md-4 classOne">
           <div class="thumbnail">
             <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
+            <h3 class='blockOne'>加密解密</h3>
+            <a href="#/encdec" class="btn btn-primary" role="button">进入</a>
           </div>
         </div>
         <div class="col-sm-6 col-md-4 classOne">
           <div class="thumbnail">
             <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
+            <h3 class='blockOne'>str转hex</h3>
+            <a href="#/hexstr" class="btn btn-primary" role="button">进入</a>
           </div>
         </div>
         <div class="col-sm-6 col-md-4 classOne">
           <div class="thumbnail">
             <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
+            <h3 class='blockOne'>数字转大写</h3>
+            <a href="#/daxie" class="btn btn-primary" role="button">进入</a>
           </div>
         </div>
         <div class="col-sm-6 col-md-4 classOne">
           <div class="thumbnail">
             <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
+            <h3 class='blockOne'>摩斯电码</h3>
+            <a href="#/morse" class="btn btn-primary" role="button">进入</a>
           </div>
         </div>
         <div class="col-sm-6 col-md-4 classOne">
           <div class="thumbnail">
             <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-                <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
+            <h3 class='blockOne'>二维码生成</h3>
+            <a href="#/qrcode" class="btn btn-primary" role="button">进入</a>
           </div>
         </div>
       </div>
@@ -381,7 +122,7 @@ export default {
 
 .blockOne {
   position: absolute;
-  left: 100px;
+  left: 90px;
   top: 0px;
   font-size: 20px;
 }

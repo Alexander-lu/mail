@@ -46,314 +46,220 @@
       </nav>
     </el-header>
     <el-main>
-      <div class="row classtwo">
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">中国朝代表</div>
+        <div class="panel-body">
+          <p>① 约公元前14世纪盘庚迁都于殷，此后商也称为殷。
+          </p>
+          <p>
+            ② 公元前841年(西周共和元年)为中国历史确切纪年的开始。
+          </p>
+          <p>
+            ③ 包括王莽建立的"新"王朝(公元8年—23年)。王莽时期，爆发大规模的农民起义，建立了农民政权。公元23年，新王莽政权灭亡。公元25年，东汉王朝建立。
+          </p>
+          <p>
+            ④ 这时期，在我国北方，先后存在过一些封建政权，其中有：汉(前赵)、成(成汉)、前凉、后赵(魏)、前燕、前秦、后燕、后秦、西秦、后凉、南凉、北凉、南燕、西凉、北燕、夏等国，历史上叫做"十六国"。
+          </p>
+          <p>
+            ⑤ 这时期，除后梁、后唐、后晋、后汉、后周外，还先后存在过一些封建政权，其中有：吴、前蜀、吴越、楚、闽、南汉、荆南(南平)、后蜀、南唐、北汉等国，历史上叫做"十国"。。
+          </p>
         </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>未完待续</h3>
-            <a href="#" class="btn btn-primary" role="button">进入</a>
-          </div>
+
+        <!-- Table -->
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>朝 代</th>
+                <th>起 讫</th>
+                <th>都 城</th>
+                <th>今 地</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>①商</td>
+                <td>约前1675-1029年</td>
+                <td>亳</td>
+                <td>河南商丘</td>
+              </tr>
+              <tr>
+                <td>西周</td>
+                <td>②约前1029-771年</td>
+                <td>镐京</td>
+                <td>陕西西安</td>
+              </tr>
+              <tr>
+                <td>东周</td>
+                <td>前770-256年</td>
+                <td>洛邑</td>
+                <td>河南洛阳</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+              <tr>
+                <td>夏</td>
+                <td>约前2146-1675年</td>
+                <td>安邑</td>
+                <td>山西夏县</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </el-main>
@@ -368,70 +274,42 @@ export default {
   name: "Dynasty",
   data() {
     return {
+      numnnn: ""
     };
   },
+  methods: {
+    num2daxie() {
+      this.numnnn = toChinesNum(this.numnnn)
+    },
+  }
 };
+const toChinesNum = (num) => {
+  let changeNum = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖']; //changeNum[0] = "零"
+  let unit = ["", "拾", "佰", "仟", "万"];
+  num = parseInt(num);
+  let getWan = (temp) => {
+    let strArr = temp.toString().split("").reverse();
+    let newNum = "";
+    for (var i = 0; i < strArr.length; i++) {
+      newNum = (i == 0 && strArr[i] == 0 ? "" : (i > 0 && strArr[i] == 0 && strArr[i - 1] == 0 ? "" : changeNum[strArr[i]] + (strArr[i] == 0 ? unit[0] : unit[i]))) + newNum;
+    }
+    return newNum;
+  }
+  let overWan = Math.floor(num / 10000);
+  let noWan = num % 10000;
+  if (noWan.toString().length < 4) noWan = "0" + noWan;
+  return overWan ? getWan(overWan) + "万" + getWan(noWan) : getWan(num);
+
+}
 </script>
 
 <style scoped>
-.imageOne {
-  position: relative;
-  left: -50px;
-}
-
-.blockOne {
-  position: absolute;
-  left: 100px;
-  top: 0px;
-  font-size: 20px;
-}
-
-.classtwo {
-  display: block;
-  margin: 0 auto;
-  width: 80%;
-}
-
-.classOne {
-  width: 200px;
-  height: 120px;
-  padding: 0px;
-  margin-right: 20px;
-}
-
-
 .titleBrand {
   font-size: 30px;
 }
 
-.time {
-  font-size: 13px;
-  color: #999;
-}
-
-.bottom {
-  margin-top: 13px;
-  line-height: 12px;
-}
-
-.button {
-  padding: 0;
-  float: right;
-}
-
-.image {
-  width: 100%;
-  display: block;
-}
-
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: "";
-}
-
-.clearfix:after {
-  clear: both
+p {
+  float: left;
 }
 </style>
 
