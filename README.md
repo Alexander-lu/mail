@@ -8,3 +8,7 @@
 ![image](https://user-images.githubusercontent.com/102196935/176362323-59a72ea0-a78e-489a-93f3-36550b4b3565.png)
 
 Vue版本：2.0
+在spa文件夹里:
+npm ci
+npm run serve
+npm run build
