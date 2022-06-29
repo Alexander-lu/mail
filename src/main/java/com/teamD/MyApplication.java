@@ -20,7 +20,7 @@ import javax.sql.DataSource;
 @SpringBootApplication
 public class MyApplication {
     /**
-     * 启动服务器
+     * main方法用于启动应用程序
      */
     public static void main(String[] args) {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(MyApplication.class, args);
