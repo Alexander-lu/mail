@@ -1,156 +1,210 @@
-<template>
-<el-container>
-  <el-header>
-  <el-page-header @back="goBack" content="注册页面">
-</el-page-header>
-</el-header>
-  <el-main>
-  <div class="demo-image__placeholder">
-  <div class="block">
-    <el-image :src="src">
-      <div slot="placeholder" class="image-slot">
-        加载中<span class="dot">...</span>
-      </div>
-    </el-image>
-  </div>
-</div>
-<el-input placeholder="请输入账号" v-model="username" clearable></el-input>
-<el-input placeholder="请输入密码" v-model="password" show-password></el-input>
-<el-input placeholder="请输入邮箱地址" v-model="mail"  clearable></el-input>
-<button  @click="register" type="button" class="btn btn-default btn-lg">
-  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 点我注册
-</button>
-</el-main>
-<el-footer>
-<div>
-<el-row :gutter="24">
-  <el-col :span="3"><div class="grid-content bg-purple">
-  <i class="el-icon-link"></i>
-  </div></el-col>
-  <el-col :span="3"><div class="grid-content bg-purple">
-  <el-link target="_blank" href="https://pdfmyurl.com/"  underline=false>pdfmyurl</el-link>
-  </div></el-col>
-  <el-col :span="3"><div class="grid-content bg-purple">
-  <el-link target="_blank" href="https://www.web2pdfconvert.com/" >web2pdfconvert</el-link>
-  </div></el-col>
-  <el-col :span="3"><div class="grid-content bg-purple">
-  <el-link target="_blank" href="https://www.html2pdf.co.uk/" >html2pdf</el-link>
-  </div></el-col>
-  <el-col :span="3"><div class="grid-content bg-purple">
-  <el-link target="_blank" href="https://pdfcrowd.com/" >pdfcrowd</el-link>
-  </div></el-col>
-    <el-col :span="3"><div class="grid-content bg-purple">
-  <el-link target="_blank" href="https://www.sodapdf.com/html-to-pdf/" >sodapdf</el-link>
-  </div></el-col>
-      <el-col :span="3"><div class="grid-content bg-purple">
-<el-link target="_blank" href="http://www.sciweavers.org/" >sciweavers</el-link>
-  
-  </div></el-col>
-      <el-col :span="3"><div class="grid-content bg-purple">
-  
-  <el-link target="_blank" href="https://pdf-ace.com/" >pdf-ace</el-link>
-  </div></el-col>
-</el-row>
-
-
-
-
-
+<template >
+<div class="background" >
+  <div><a href="http://localhost:3000/#/login">登录</a></div>
+     <div class="login">
+        <div class="header">注册</div>
+        <div class="container">
+            <input type="text" placeholder="请输入用户名">
+            <span class="left"></span>
+            <span class="right"></span>
+            <span class="top"></span>
+            <span class="bottom"></span>
+            
+        </div>
+        <div class="container1">
+            <input type="password" placeholder="请输入密码">
+            <span class="left"></span>
+            <span class="right"></span>
+            <span class="top"></span>
+            <span class="bottom"></span>
+        </div> 
+        <div class="container2">
+            <input type="password" placeholder="请确认密码">
+            <span class="left"></span>
+            <span class="right"></span>
+            <span class="top"></span>
+            <span class="bottom"></span>
+        </div>
+        <div class="container3">
+            <input type="password" placeholder="请输入手机号">
+            <span class="left"></span>
+            <span class="right"></span>
+            <span class="top"></span>
+            <span class="bottom"></span>
+        </div>
+       <button class="btn">注册</button> 
+    </div> 
 
 </div>
-</el-footer>
-</el-container>
 </template>
 
 <script>
 export default {
-  name: "Register",
-  data() {
-    return {
-          username: ''
-    ,password:''
-    ,mail: ''
-    ,src: 'https://images.unsplash.com/photo-1623276527153-fa38c1616b05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80'
-    };
-  },
-  methods: {
-     register() {
-       this.axios({
-        method:"POST",
-        url:"/api/insert",
-        data:{
-            "username":this.username,
-            "password":this.password,
-               "mail":this.mail,
-        }
-       }).then(()=>{
-              this.$router.push('/login');
-       })
+    name: "LoginBox",
+    data() {
+        return {
+          
+            username: ''
+            , password: ''
+            , mail: ''
+        };
+    },
 
-     },
-      goBack() {
-            this.$router.push('/login');
-      }
-    }
-};
+
+    
+}
+
 </script>
 
 <style scoped>
-.el-image{
-  height: 500px;
-  widows: 300px;
-}
-.el-header, .el-footer {
-    background-color: #B3C0D1;
-    color: #333;
-    text-align: center;
-    line-height: 60px;
-  }
-  
-  .el-aside {
-    background-color: #D3DCE6;
-    color: #333;
-    text-align: center;
-    line-height: 200px;
-  }
-  
-  .el-main {
-    background-color: #E9EEF3;
-    color: #333;
-    text-align: center;
-    line-height: 50px;
-  }
-  
-  body > .el-container {
-    margin-bottom: 40px;
-  }
-  
-  .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
-    line-height: 260px;
-  }
-  
-  .el-container:nth-child(7) .el-aside {
-    line-height: 320px;
-  }
-  .el-col {
-    border-radius: 4px;
-  }
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-  .bg-purple {
-    background: #d3dce6;
-  }
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
-  }
-  .row-bg {
-    padding: 10px 0;
-    background-color: #f9fafc;
-  }
+
+    * {
+            margin: 0;
+            padding: 0;
+        }
+
+ .background{
+background:url("../assets/1.jpg");
+width:100%;			
+height:100%;			
+position:fixed;
+background-size:100% 100%;}
+
+       
+
+        .login {
+            width: 358px;
+            height: 588px;
+            border-radius: 15px;
+            padding: 0 50px;
+            position: relative;
+            left: 50%;
+            margin-top: 30%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(200,200,200,0.75);
+        }
+        .header {
+            font-size: 38px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 200px;
+            color: #61dafb;
+        }
+        .container {
+              padding-right: 0px;
+          padding-left: 0px;
+            height: 30px;
+            width: 250px;
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            transform: translate(-50%, -50%);
+        }
+           .container1 {
+            height: 30px;
+            width: 250px;
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%);
+        }
+         .container2 {
+            height: 30px;
+            width: 250px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+           .container3 {
+            height: 30px;
+            width: 250px;
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+        }
+      
+
+        input {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            outline: none;
+            border: none;
+            box-sizing: border-box;
+            padding-left: 5px;
+            background-color: #282c34;
+            color: #61dafb;
+            caret-color: #61dafb;
+        }
+        input::placeholder {
+            color: #61dafb;
+        }
+
+        span {
+            position: absolute;
+            content: "";
+            display: block;
+            background-color: #61dafb;
+            transition: transform .1s ease-in-out;
+        }
+        .top,
+        .bottom {
+            left: 0px;
+            right: 0px;
+            height: 2px;
+        }
+        .left,
+        .right {
+            top: 0px;
+            bottom: 0px;
+            width: 2px;
+            transform: scaleY(0);
+        }
+        .top {
+            top: 0px;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition-delay: .2s;
+        }
+        .left {
+            left: 0px;
+            transform-origin: bottom center;
+            transition-delay: .3s;
+        }
+        .bottom {
+            bottom: 0px;
+        }
+        .right {
+            right: 0px;
+            transform-origin: top center;
+            transition-delay: .1s;
+        }
+        input:focus ~ .right {
+            transform: scaleY(1);
+            transform-origin: bottom center;
+        }
+        input:focus ~ .left {
+            transform: scaleY(1);
+            transform-origin: top center;
+        }
+        input:focus ~ .top {
+            transform: scaleY(1);
+            transform-origin: right center;
+        }
+     
+        .btn {
+            position: absolute;
+            left: 50%;
+            top: 70%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            padding: 5px;
+            width: 52%;
+            margin-top: 40px;
+            background-color: #61dafb;
+            color: #fff;
+        }
+
 </style>

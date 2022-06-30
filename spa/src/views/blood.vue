@@ -46,10 +46,82 @@
       </nav>
     </el-header>
     <el-main>
-      <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 4 }" placeholder="请输入数字" v-model="numnnn">
-      </el-input>
-      <button @click="num2daxie" type="button" class="btn btn-default btn-lg"> 数字转中文大写
-      </button>
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">血型遗传规律表</div>
+
+        <!-- Table -->
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>父母血型</th>
+                <th>子女会出现的血型</th>
+                <th>子女不会出现的血型</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>O+O</td>
+                <td>O</td>
+                <td>A、B、AB</td>
+              </tr>
+              <tr>
+                <td>O+A</td>
+                <td>A、O</td>
+                <td>B、AB</td>
+              </tr>
+              <tr>
+                <td>O+B</td>
+                <td>B、O</td>
+                <td>A、AB</td>
+              </tr>
+              <tr>
+                <td>O+AB</td>
+                <td>A、B</td>
+                <td>O、AB</td>
+  
+              </tr>
+              <tr>
+                <td>A+A</td>
+                <td>A、O</td>
+                <td>AB、B</td>
+    
+              </tr>
+              <tr>
+                <td>A+B</td>
+                <td>AB、A、B、O</td>
+                <td></td>
+      
+              </tr>
+              <tr>
+                <td>A+AB</td>
+                <td>A、B、AB</td>
+                <td>O</td>
+        
+              </tr>
+              <tr>
+                <td>B+B</td>
+                <td>B、O</td>
+                <td>A、AB</td>
+       
+              </tr>
+              <tr>
+                <td>B+AB</td>
+                <td>A、B、AB</td>
+                <td>O</td>
+        
+              </tr>
+              <tr>
+                <td>AB+AB</td>
+                <td>A、B、AB</td>
+                <td>O</td>
+              </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
     </el-main>
     <el-footer>Footer</el-footer>
   </el-container>
@@ -59,41 +131,27 @@
 
 <script>
 export default {
-  name: "Morse",
+  name: "Blood",
   data() {
     return {
-      numnnn: ""
     };
   },
   methods: {
-    num2daxie() {
-      this.numnnn = toChinesNum(this.numnnn)
-    },
   }
 };
-const toChinesNum = (num) => {
-  let changeNum = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖']; //changeNum[0] = "零"
-  let unit = ["", "拾", "佰", "仟", "万"];
-  num = parseInt(num);
-  let getWan = (temp) => {
-    let strArr = temp.toString().split("").reverse();
-    let newNum = "";
-    for (var i = 0; i < strArr.length; i++) {
-      newNum = (i == 0 && strArr[i] == 0 ? "" : (i > 0 && strArr[i] == 0 && strArr[i - 1] == 0 ? "" : changeNum[strArr[i]] + (strArr[i] == 0 ? unit[0] : unit[i]))) + newNum;
-    }
-    return newNum;
-  }
-  let overWan = Math.floor(num / 10000);
-  let noWan = num % 10000;
-  if (noWan.toString().length < 4) noWan = "0" + noWan;
-  return overWan ? getWan(overWan) + "万" + getWan(noWan) : getWan(num);
 
-}
 </script>
 
 <style scoped>
+th{
+  text-align: center;
+}
 .titleBrand {
   font-size: 30px;
+}
+
+p {
+  float: left;
 }
 </style>
 
