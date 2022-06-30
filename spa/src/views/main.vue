@@ -85,13 +85,6 @@
         <div class="col-sm-6 col-md-4 classOne">
           <div class="thumbnail">
             <img class='imageOne' src="../assets/123.png" alt="...">
-            <h3 class='blockOne'>摩斯电码</h3>
-            <a href="#/morse" class="btn btn-primary" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/123.png" alt="...">
             <h3 class='blockOne'>二维码生成</h3>
             <a href="#/qrcode" class="btn btn-primary" role="button">进入</a>
           </div>
