@@ -76,7 +76,7 @@
         </div>
         <div class="col-sm-6 col-md-4 classOne">
           <div class="thumbnail">
-            <img class='imageOne' height="70" width="70" src="../assets/摩斯密码.png" alt="...">
+            <img class='imageOne' height="70" width="70" src="../assets/世界.png" alt="...">
             <h3 class='blockOne'>各国首都列表</h3>
             <a href="#/soudu" class="btn btn-primary" role="button">进入</a>
           </div>
