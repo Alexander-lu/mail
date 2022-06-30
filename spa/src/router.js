@@ -13,6 +13,7 @@ import Daxie from './views/daxie.vue'
 import Hexstr from './views/hexstr.vue'
 import Url2pdf from './views/url2pdf.vue'
 import Blood from './views/blood.vue'
+import Store from './views/store.vue'
 Vue.use(Router)
 export default new Router({
     routes: [
@@ -30,6 +31,11 @@ export default new Router({
             path: '/blood',
             name: 'Blood',
             component: Blood
+        },
+        {
+            path: '/store',
+            name: 'Store',
+            component: Store
         },
         {
             path: '/register',
