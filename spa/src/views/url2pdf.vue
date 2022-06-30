@@ -15,7 +15,7 @@
                 <div class="main-title">
                     <img src="../img/banner.png" alt="">
                 </div>
-                <div class="input">it 
+                <div class="input">
                     <input class="main=input" v-model="input" type="text" placeholder="请输入需要转换的网页地址">
                     <button type="submit">转换</button>
                 </div>
