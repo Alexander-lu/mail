@@ -17,7 +17,8 @@
                 </div>
                 <div class="input">
                     <input class="main=input" v-model="input" type="text" placeholder="请输入需要转换的网页地址">
-                    <button type="submit">转换</button>
+                    <button type="submit" @click="convert">点击转换</button>
+                    <span>{{ msg }} 123</span>
                 </div>
                 <div class="intro">
                     <div class="intro1">
@@ -58,9 +59,35 @@
 </template>
 
 <script>
+
 export default {
     name: 'Url2pdf',
+    data() {
+        return {
+            input: '',
+            msg: ''
+        }
+    },
     components: {
+
+    }, methods: {
+        convert() {
+            this.axios({
+                method: 'POST',
+                url: '/api/url2pdf',
+                data: {
+                    'url': this.input,
+                }
+            }).then((response) => {
+                if (response.data.status == 'good') {
+                    console.log(response.data.msg)
+                    this.msg = response.data.msg
+                } else {
+          
+                    this.msg = response.data.msg
+                }
+            });
+        }
 
     }
 }
