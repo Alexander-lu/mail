@@ -83,9 +83,13 @@ export default new Router({
             name: 'Main',
             component: Main
         },
+         {
+            path: '/',
+            redirect: '/main'
+        },
         {
             path: '*',
-            redirect: '/main'
+            redirect: '/404'
         },
         {
             path: '/url2pdf',
