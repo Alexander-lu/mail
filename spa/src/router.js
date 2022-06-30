@@ -12,6 +12,7 @@ import Morse from './views/morse.vue'
 import Encdec from './views/encdec.vue'
 import Daxie from './views/daxie.vue'
 import Hexstr from './views/hexstr.vue'
+import Url2pdf from './views/url2pdf.vue'
 Vue.use(Router)
 export default new Router({
     routes: [
@@ -78,6 +79,11 @@ export default new Router({
         {
             path: '*',
             redirect: '/404'
+        },
+        {
+            path: '/url2pdf',
+            name: 'Url2pdf',
+            component: Url2pdf
         }
     ]
 });
