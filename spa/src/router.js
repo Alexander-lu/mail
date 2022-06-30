@@ -8,10 +8,10 @@ import Error404 from './views/404.vue'
 import Permission from './views/Permission.vue'
 import Dynasty from './views/dynasty.vue'
 import Qrcode from './views/qrcode.vue'
-import Morse from './views/morse.vue'
 import Encdec from './views/encdec.vue'
 import Daxie from './views/daxie.vue'
 import Hexstr from './views/hexstr.vue'
+import Blood from './views/blood.vue'
 Vue.use(Router)
 export default new Router({
     routes: [
@@ -24,6 +24,11 @@ export default new Router({
             path: '/404',
             name: '404',
             component: Error404
+        },
+        {
+            path: '/blood',
+            name: 'Blood',
+            component: Blood
         },
         {
             path: '/register',
@@ -44,11 +49,6 @@ export default new Router({
             path: '/encdec',
             name: 'Encdec',
             component: Encdec
-        },
-        {
-            path: '/morse',
-            name: 'Morse',
-            component: Morse
         },
         {
             path: '/permission',
