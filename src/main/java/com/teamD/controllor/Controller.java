@@ -5,22 +5,31 @@ import com.convertapi.client.ConvertApi;
 import com.teamD.entity.Student;
 import com.teamD.mapper.Mysql;
 import org.apache.catalina.mapper.Mapper;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.teamD.Service.FansQueryService;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 /**
  * Controller则负责对数据和页面进行协调
@@ -159,4 +168,13 @@ public class Controller {
         }
         return responseJson;
     }
+//    @RequestMapping(value = "/download", method = GET)
+//    public ResponseEntity download() throws IOException {
+//        File file = new File("HelloWorld.pdf");
+//        InputStream in = new FileInputStream(file);
+//        final HttpHeaders headers = new HttpHeaders();
+//        headers.add("Content-Type", "application/pdf");
+//        headers.add("Content-Disposition", "attachment; filename=" + file.getName() );
+//        return new ResponseEntity<>(IOUtils., headers, HttpStatus.OK);
+//    }
 }
