@@ -14,7 +14,7 @@
 <script>
 import { useRouter } from "vue-router";
 export default {
-    name: "403",
+    name: "401",
     setup() {
         const router = useRouter();
         const goBack = () => {
