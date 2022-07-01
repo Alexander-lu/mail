@@ -18,7 +18,7 @@
                 <div class="input">
                     <input class="main=input" v-model="input" type="text" placeholder="请输入需要转换的网页地址">
                     <button type="submit" @click="convert">点击转换</button>
-                    <span>{{ msg }} 123</span>
+
                 </div>
                 <div class="intro">
                     <div class="intro1">
@@ -35,9 +35,19 @@
                     </div>
                 </div>
 
+                <Download v-bind:image="require('../img/file.png')" class="down-component">
+
+
+                    <input type="submit" value="下载" @click="download(url)" />
+                    <p>{{ msg }}23222</p>
+                </Download>
+
+
 
             </el-main>
+
             <footer class="footer">
+
                 <div class="footer-intro">
                     <a href="#">
                         <button>转换成PDF</button>
@@ -59,33 +69,34 @@
 </template>
 
 <script>
+import Download from '@/components/download.vue';
+
 
 export default {
     name: 'Url2pdf',
     data() {
         return {
             input: '',
-            msg: ''
+            msg: '32333'
         }
     },
     components: {
+        Download,
 
     }, methods: {
         convert() {
-            this.axios({
-                method: 'POST',
-                url: '/api/url2pdf',
-                data: {
-                    'url': this.input,
-                }
-            }).then((response) => {
-                if (response.data.status == 'good') {
-                    window.location.href = '/api/download?path=' + response.data.path
-                } else {
-          
-                    this.msg = response.data.msg
-                }
-            });
+
+this.axios({
+method: 'POST',
+url: '/api/url2pdf',
+data: {
+'url': this.input,
+}
+}).then((response) => {
+if (response.data.status == 'good') {
+window.location.href = '/api/download?path=' + response.data.path
+}
+})
         }
 
     }
@@ -145,12 +156,13 @@ export default {
     line-height: 40px;
     border-radius: 50px;
     background-color: white;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 
 }
 
 .navbar button:hover {
-
-    box-shadow: 0 0 50px #4c92d3;
+    /* box-shadow: 15px 15px 27px #4c92d3, -15px -15px 27px #ffffff; */
+    box-shadow: 10px 10px 50px #4c92d3;
     color: rgb(16, 206, 219);
     font-weight: bold;
 }
@@ -194,15 +206,17 @@ export default {
 .input button {
     border: none;
     position: relative;
-    right: 90px;
+    right: 80px;
     top: 2px;
     height: 45px;
 
     line-height: 35px;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .input button:hover {
     box-shadow: 0 0 50px #ccc;
+    /* box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff; */
     color: rgb(16, 206, 219);
     font-weight: bold;
 }
@@ -225,6 +239,37 @@ export default {
     margin-bottom: 10px;
 }
 
+.down-component p {
+    position: relative;
+    top: 25px;
+    right: 200px;
+    color: #4c92d3;
+}
+
+input[type="submit"] {
+
+
+    display: block;
+    border: none;
+    font-size: inherit;
+    margin: 0 auto 20px auto;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    color: #4c92d3;
+    border-radius: 50px;
+    background-color: white;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+}
+
+input[type="submit"]:hover {
+    background: hsl(168, 34%, 72%);
+    box-shadow: 0 0 50px #ccc;
+}
+
+
+
 .footer-intro>a {
     text-decoration: none;
     margin-right: 5%;
@@ -237,10 +282,11 @@ export default {
     line-height: 40px;
     border-radius: 50px;
     background-color: white;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .footer button:hover {
-    box-shadow: 0 0 50px #ccc;
+    box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
     color: rgb(16, 206, 219);
     font-weight: bold;
 }

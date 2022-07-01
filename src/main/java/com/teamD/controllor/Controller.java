@@ -29,6 +29,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+
 /**
  * Controller则负责对数据和页面进行协调
  * MapperScan("com/teamD/mapper")表明需要在mapper文件里面扫描Mysql这个类
@@ -38,11 +40,10 @@ import java.util.Map;
  * @version 1.0
  *          20220628
  **/
-
-@RestController // 服务器接收端
-@EnableAutoConfiguration // 允许自动配置
-@MapperScan("com/teamD/mapper") // 数据库交互
-@ComponentScan("com/teamD/Service") // 组件
+@RestController
+@EnableAutoConfiguration
+@MapperScan("com/teamD/mapper")
+@ComponentScan("com/teamD/Service")
 public class Controller {
     @Autowired
     private Mysql mysql;
@@ -152,8 +153,8 @@ public class Controller {
     /**
      * 在电脑上生成pdf
      * 
-     * @param data  url  
-     * @param response  在电脑上生成pdf
+     * @param data     url
+     * @param response 在电脑上生成pdf
      * @return
      */
     @PostMapping("/url2pdf")
@@ -208,5 +209,4 @@ public class Controller {
         }
         return response;
     }
-
 }
