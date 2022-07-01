@@ -175,13 +175,13 @@ public class Controller {
 //        String[] split1 = name.split("//");
 //        String realname = split1[1];
         String path = "src/main/resources/convertedPDFs/" + realname + ".pdf";
-        Config.setDefaultSecret("J0uMB0UBPUgTI3zJ");
+        Config.setDefaultSecret("bGvJ9RMbic6QHUsd");
         ConvertApi.convertUrl(url, path);
         File convertedfile = new File(path);
         if (convertedfile.exists()) {
             responseJson = "{\"status\": \"good\", \"path\": \"" + realname + "\"}";
         } else {
-            responseJson = "{\"status\": \"bad\"}";
+            responseJson = "{\"status\": \"bad\", \"msg\": \"fail\"}";
         }
         return responseJson;
     }

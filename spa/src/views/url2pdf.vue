@@ -86,12 +86,9 @@ export default {
 
     }, methods: {
         convert() {
-
+            console.log('1');
             this.fullscreenLoading = true;
-            setTimeout(() => {
-                this.fullscreenLoading = false;
-            }, 10000);
-
+            console.log('2');
             this.axios({
                 method: 'POST',
                 url: '/api/url2pdf',
@@ -100,8 +97,14 @@ export default {
                 }
             }).then((response) => {
                 if (response.data.status == 'good') {
+                    console.log('3');
                     this.msg = response.data.path
+                    this.fullscreenLoading = false;
 
+                } else {
+                    console.log('4');
+                    this.msg = response.data.msg;
+                    this.fullscreenLoading = false;
                 }
             })
         },
