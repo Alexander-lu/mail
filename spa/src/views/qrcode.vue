@@ -20,19 +20,14 @@
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <form class="navbar-form navbar-left">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="搜索其实很简单">
-              </div>
-              <button type="submit" class="btn btn-default">搜索</button>
-            </form>
+
         
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
     </el-header>
     <el-main>
-       <button @click="creatQrCode" type="button" class="btn btn-default btn-lg"> 生成二维码</button>
+ <button @click="creatQrCode" type="button" class="btn btn-default btn-lg"> 生成二维码</button>
       <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 4 }" placeholder="请输入网址" v-model=qrcodedata></el-input>
   
       <span ref="qrCodeUrl"></span>
