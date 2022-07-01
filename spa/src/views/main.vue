@@ -17,11 +17,9 @@
                 <a class='titleBrand' href="#"><img alt="在线工具" src="../assets/10.png"></a>
               </div>
             </div>
-
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
             <form class="navbar-form navbar-left">
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="搜索其实很简单">
@@ -36,64 +34,133 @@
     </el-header>
     <el-main>
       <div class="row classtwo">
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <!-- <img class='imageOne' src="../assets/123.png" alt="..."> -->
-            <img class='imageOne' src="../assets/pdf.png" alt="...">
-            <h3 class='blockOne'><b>url转pdf</b></h3>
-            <p class="illustration">将网页转换成PDF文档</p>
-            <a href="#/url2pdf" class="btn btn-primary pos" role="button">进入</a>
-            <a href="#/store" class="btn btn-primary pos" role="button">查看</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/朝代表.png" alt="...">
-            <h3 class='blockOne'><b>国朝代表</b></h3>
-            <p class="illustration">中国历代详细信息</p>
-            <a href="#/dynasty" class="btn btn-primary pos" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/加密.png" alt="...">
-            <h3 class='blockOne'><b>加密解密</b></h3>
-            <p class="illustration">生成加密文本</p>
-            <a href="#/encdec" class="btn btn-primary pos" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/转16.png" alt="...">
-            <h3 class='blockOne'><b>str转hex</b></h3>
-            <p class="illustration">字符串转换成16进制</p>
-            <a href="#/hexstr" class="btn btn-primary pos" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/转大写.png" alt="...">
-            <h3 class='blockOne'><b>数字转大写</b></h3>
-            <p class="illustration">数字转成中文大写</p>
-            <a href="#/daxie" class="btn btn-primary pos" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/世界.png" alt="...">
-            <h3 class='blockOne'><b>各国首都列表</b></h3>
-            <p class="illustration">各国首都信息</p>
-            <a href="#/soudu" class="btn btn-primary pos" role="button">进入</a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' src="../assets/二维码.png" alt="...">
-            <h3 class='blockOne'><b>二维码生成</b></h3>
-            <p class="illustration">信息保存到二维码中</p>
-            <a href="#/qrcode" class="btn btn-primary pos" role="button">进入</a>
-          </div>
-        </div>
+        <el-tabs v-model="activeName" @tab-click="handleClick">
+          <el-tab-pane label="全部" name="first">
+            <div class="col-sm-6 col-md-4 classOne">
+              <div class="thumbnail">
+                <!-- <img class='imageOne' src="../assets/123.png" alt="..."> -->
+                <img class='imageOne' src="../assets/pdf.png" alt="...">
+                <h3 class='blockOne'><b>url转pdf</b></h3>
+                <p class="illustration">将网页转换成PDF文档</p>
+                <a href="#/url2pdf" class="btn btn-primary pos" role="button">进入</a>
+                <a href="#/store" class="btn btn-primary pos" role="button">查看</a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 classOne">
+              <div class="thumbnail">
+                <img class='imageOne' src="../assets/朝代表.png" alt="...">
+                <h3 class='blockOne'><b>国朝代表</b></h3>
+                <p class="illustration">中国历代详细信息</p>
+                <a href="#/dynasty" class="btn btn-primary pos" role="button">进入</a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 classOne">
+              <div class="thumbnail">
+                <img class='imageOne' src="../assets/加密.png" alt="...">
+                <h3 class='blockOne'><b>加密解密</b></h3>
+                <p class="illustration">生成加密文本</p>
+                <a href="#/encdec" class="btn btn-primary pos" role="button">进入</a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 classOne">
+              <div class="thumbnail">
+                <img class='imageOne' src="../assets/转16.png" alt="...">
+                <h3 class='blockOne'><b>str转hex</b></h3>
+                <p class="illustration">字符串转换成16进制</p>
+                <a href="#/hexstr" class="btn btn-primary pos" role="button">进入</a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 classOne">
+              <div class="thumbnail">
+                <img class='imageOne' src="../assets/转大写.png" alt="...">
+                <h3 class='blockOne'><b>数字转大写</b></h3>
+                <p class="illustration">数字转成中文大写</p>
+                <a href="#/daxie" class="btn btn-primary pos" role="button">进入</a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 classOne">
+              <div class="thumbnail">
+                <img class='imageOne' src="../assets/世界.png" alt="...">
+                <h3 class='blockOne'><b>各国首都列表</b></h3>
+                <p class="illustration">各国首都信息</p>
+                <a href="#/soudu" class="btn btn-primary pos" role="button">进入</a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 classOne">
+              <div class="thumbnail">
+                <img class='imageOne' src="../assets/二维码.png" alt="...">
+                <h3 class='blockOne'><b>二维码生成</b></h3>
+                <p class="illustration">信息保存到二维码中</p>
+                <a href="#/qrcode" class="btn btn-primary pos" role="button">进入</a>
+              </div>
+            </div>
+          </el-tab-pane>
+          <el-tab-pane label="转换类" name="second">
+            <div class="col-sm-6 col-md-4 classOne">
+              <div class="thumbnail">
+                <!-- <img class='imageOne' src="../assets/123.png" alt="..."> -->
+                <img class='imageOne' src="../assets/pdf.png" alt="...">
+                <h3 class='blockOne'><b>url转pdf</b></h3>
+                <p class="illustration">将网页转换成PDF文档</p>
+                <a href="#/url2pdf" class="btn btn-primary pos" role="button">进入</a>
+                <a href="#/store" class="btn btn-primary pos" role="button">查看</a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 classOne">
+              <div class="thumbnail">
+                <img class='imageOne' src="../assets/加密.png" alt="...">
+                <h3 class='blockOne'><b>加密解密</b></h3>
+                <p class="illustration">生成加密文本</p>
+                <a href="#/encdec" class="btn btn-primary pos" role="button">进入</a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 classOne">
+              <div class="thumbnail">
+                <img class='imageOne' src="../assets/转16.png" alt="...">
+                <h3 class='blockOne'><b>str转hex</b></h3>
+                <p class="illustration">字符串转换成16进制</p>
+                <a href="#/hexstr" class="btn btn-primary pos" role="button">进入</a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 classOne">
+              <div class="thumbnail">
+                <img class='imageOne' src="../assets/转大写.png" alt="...">
+                <h3 class='blockOne'><b>数字转大写</b></h3>
+                <p class="illustration">数字转成中文大写</p>
+                <a href="#/daxie" class="btn btn-primary pos" role="button">进入</a>
+              </div>
+            </div>
+          </el-tab-pane>
+          <el-tab-pane label="查询类" name="third">
+            <div class="col-sm-6 col-md-4 classOne">
+              <div class="thumbnail">
+                <img class='imageOne' src="../assets/朝代表.png" alt="...">
+                <h3 class='blockOne'><b>国朝代表</b></h3>
+                <p class="illustration">中国历代详细信息</p>
+                <a href="#/dynasty" class="btn btn-primary pos" role="button">进入</a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 classOne">
+              <div class="thumbnail">
+                <img class='imageOne' src="../assets/世界.png" alt="...">
+                <h3 class='blockOne'><b>各国首都列表</b></h3>
+                <p class="illustration">各国首都信息</p>
+                <a href="#/soudu" class="btn btn-primary pos" role="button">进入</a>
+              </div>
+            </div>
+          </el-tab-pane>
+          <el-tab-pane label="二维码类" name="fourth">
+            <div class="col-sm-6 col-md-4 classOne">
+              <div class="thumbnail">
+                <img class='imageOne' src="../assets/二维码.png" alt="...">
+                <h3 class='blockOne'><b>二维码生成</b></h3>
+                <p class="illustration">信息保存到二维码中</p>
+                <a href="#/qrcode" class="btn btn-primary pos" role="button">进入</a>
+              </div>
+            </div>
+          </el-tab-pane>
+        </el-tabs>
+
       </div>
     </el-main>
     <el-footer>
@@ -106,8 +173,8 @@
       </div>
     </el-footer>
     <div id="fixed-btn" style="position:fixed;" @click="back_top">
-<!--      <a class="go-top" href="#" title="返回顶部">-->
-        <div style="{
+      <!--      <a class="go-top" href="#" title="返回顶部">-->
+      <div style="{
         height: 50px;
         width: 50px;
         background-color: #f2f5f6;
@@ -117,9 +184,9 @@
         /*color: #1989fa;*/
         color: rgb(0, 154, 97);
       }">
-         UP
-        </div>
-<!--      </a>-->
+        UP
+      </div>
+      <!--      </a>-->
     </div>
   </el-container>
 </template>
@@ -128,9 +195,11 @@
 export default {
   name: "Main",
   data() {
-    return {};
+    return {
+      activeName: 'second'
+    };
   },
-  methods:{
+  methods: {
     back_top() {
       let a = scrollY;
       let timer = setInterval(function () {
@@ -141,6 +210,9 @@ export default {
           clearInterval(timer);
         }
       }, 10)
+    },
+    handleClick(tab, event) {
+      console.log(tab, event);
     }
   }
 };
