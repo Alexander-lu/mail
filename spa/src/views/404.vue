@@ -34,7 +34,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 20%;
+    width: 100%;
     height: 100%;
     background: #f3f3f3;
     box-sizing: border-box;
