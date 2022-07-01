@@ -6,8 +6,8 @@
 
                     <img src="../img/adalab.png" alt="主页">
                 </a>
-                <a href="#">
-                    <button class="right" round>登陆</button>
+                <a href="#/register">
+                    <button class="right" @click="login" round>注册</button>
                 </a>
             </nav>
 
@@ -38,6 +38,8 @@
                 <Download v-bind:image="require('../img/file.png')" id="down-component">
 
                     <button type="submit" @click="download">下载</button>
+                    <!-- <Sendmail></Sendmail> -->
+                    <button type="submit" @click="send2mail">转发到邮箱</button>
                     <!-- <input type="submit" value="下载" @click="download" /> -->
                     <p>{{ msg }}</p>
                 </Download>
@@ -72,6 +74,8 @@
 import Download from '@/components/download.vue';
 
 
+
+
 export default {
     name: 'Url2pdf',
     data() {
@@ -86,9 +90,9 @@ export default {
 
     }, methods: {
         convert() {
-            console.log('1');
+
             this.fullscreenLoading = true;
-            console.log('2');
+
             this.axios({
                 method: 'POST',
                 url: '/api/url2pdf',
@@ -97,12 +101,13 @@ export default {
                 }
             }).then((response) => {
                 if (response.data.status == 'good') {
-                    console.log('3');
+
                     this.msg = response.data.path
+                    console.log(this.msg);
                     this.fullscreenLoading = false;
 
                 } else {
-                    console.log('4');
+
                     this.msg = response.data.msg;
                     this.fullscreenLoading = false;
                 }
@@ -110,10 +115,61 @@ export default {
         },
         download() {
             window.location.href = '/api/download?path=' + this.msg
+        },
+        login() {
+            this.$router.push('/register')
+        },
+        send2mail() {
+            // console.log(1);
+            this.$prompt('请输入邮箱', '提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
+                inputErrorMessage: '邮箱格式不正确'
+            }).then(({ value }) => {
+                // sendemail333()
+                // console.log(222222);
+                // this.$message({
+
+                //     type: 'success',
+                //     message: '你的邮箱是: ' + value
+
+
+                // }).catch(() => {
+                //     this.$message({
+                //         type: 'info',
+                //         message: '取消输入'
+                //     });
+                // });
+                // console.log(value);
+                // console.log(2);
+                // console.log(this.msg);
+                this.axios({
+                    method: 'POST',
+                    url: 'api/sendMail',
+                    data: {
+                        'email': value,
+                        'filename': this.msg
+                    }
+
+                }).then((response) => {
+                    // console.log(4);
+                    if (response.data.status == 'good') {
+                        this.msg = response.data.msg
+                    }
+                })
+
+            });
+
+
+
         }
 
     }
 }
+// function sendemail333() {
+//     console.log(222);
+// }
 </script>
 
 <style scoped>
@@ -255,7 +311,7 @@ main {
 
 #down-component p {
     position: relative;
-    top: 25px;
+    top: -35px;
     right: 230px;
     color: #4c92d3;
 }

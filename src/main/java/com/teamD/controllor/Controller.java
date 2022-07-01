@@ -60,9 +60,11 @@ public class Controller {
      */
     @PostMapping("/sendMail")
     public String sendMail(@RequestBody Map<String, String> data, HttpServletResponse response) throws Exception {
-        String mail = data.get("mail");
-        fansQueryService.fansQuery(mail);
-        return "{\"status\": \"good\"}";
+        String mail = data.get("email");
+        String filename = data.get("filename")+".pdf";
+        String path = "src/main/resources/convertedPDFs/" + data.get("filename") + ".pdf";
+        fansQueryService.fansQuery(mail,path,filename);
+        return "{\"status\": \"good\", \"msg\": \"Sent~\"}";
     }
 
     /**
@@ -168,12 +170,6 @@ public class Controller {
                 .getTime();
         String realname= formatter.format(today);
 
-
-
-//        String[] split = url.split("\\.");
-//        String name = split[0];
-//        String[] split1 = name.split("//");
-//        String realname = split1[1];
         String path = "src/main/resources/convertedPDFs/" + realname + ".pdf";
         Config.setDefaultSecret("bGvJ9RMbic6QHUsd");
         ConvertApi.convertUrl(url, path);
