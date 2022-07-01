@@ -2,8 +2,7 @@
     <div id="url2pdf">
         <div class="outter-space">
             <nav class="navbar">
-                <a href="#" class="left">
-
+                <a href="https://www.adalab.cn/" class="left">
                     <img src="../img/adalab.png" alt="主页">
                 </a>
             
