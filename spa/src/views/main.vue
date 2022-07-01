@@ -39,53 +39,59 @@
         <div class="col-sm-6 col-md-4 classOne">
           <div class="thumbnail">
             <!-- <img class='imageOne' src="../assets/123.png" alt="..."> -->
-            <img class='imageOne' height="70" width="70" src="../assets/pdf.png" alt="...">
-            <h3 class='blockOne'>url转pdf</h3>
-            <a href="#/url2pdf" class="btn btn-primary" role="button">进入</a>
-            <a href="#/store" class="btn btn-primary" role="button">查看</a>
-          </div>
-
-        </div>
-        <div class="col-sm-6 col-md-4 classOne">
-          <div class="thumbnail">
-            <img class='imageOne' height="70" width="70" src="../assets/朝代表.png" alt="...">
-            <h3 class='blockOne'>国朝代表</h3>
-            <a href="#/dynasty" class="btn btn-primary" role="button">进入</a>
+            <img class='imageOne' src="../assets/pdf.png" alt="...">
+            <h3 class='blockOne'><b>url转pdf</b></h3>
+            <p class="illustration">将网页转换成PDF文档</p>
+            <a href="#/url2pdf" class="btn btn-primary pos" role="button">进入</a>
+            <a href="#/store" class="btn btn-primary pos" role="button">查看</a>
           </div>
         </div>
         <div class="col-sm-6 col-md-4 classOne">
           <div class="thumbnail">
-            <img class='imageOne' height="70" width="70" src="../assets/加密.png" alt="...">
-            <h3 class='blockOne'>加密解密</h3>
-            <a href="#/encdec" class="btn btn-primary" role="button">进入</a>
+            <img class='imageOne' src="../assets/朝代表.png" alt="...">
+            <h3 class='blockOne'><b>国朝代表</b></h3>
+            <p class="illustration">中国历代详细信息</p>
+            <a href="#/dynasty" class="btn btn-primary pos" role="button">进入</a>
           </div>
         </div>
         <div class="col-sm-6 col-md-4 classOne">
           <div class="thumbnail">
-            <img class='imageOne' height="70" width="70" src="../assets/转16.png" alt="...">
-            <h3 class='blockOne'>str转hex</h3>
-            <a href="#/hexstr" class="btn btn-primary" role="button">进入</a>
+            <img class='imageOne' src="../assets/加密.png" alt="...">
+            <h3 class='blockOne'><b>加密解密</b></h3>
+            <p class="illustration">生成加密文本</p>
+            <a href="#/encdec" class="btn btn-primary pos" role="button">进入</a>
           </div>
         </div>
         <div class="col-sm-6 col-md-4 classOne">
           <div class="thumbnail">
-            <img class='imageOne' height="70" width="70" src="../assets/转大写.png" alt="...">
-            <h3 class='blockOne'>数字转大写</h3>
-            <a href="#/daxie" class="btn btn-primary" role="button">进入</a>
+            <img class='imageOne' src="../assets/转16.png" alt="...">
+            <h3 class='blockOne'><b>str转hex</b></h3>
+            <p class="illustration">字符串转换成16进制</p>
+            <a href="#/hexstr" class="btn btn-primary pos" role="button">进入</a>
           </div>
         </div>
         <div class="col-sm-6 col-md-4 classOne">
           <div class="thumbnail">
-            <img class='imageOne' height="70" width="70" src="../assets/世界.png" alt="...">
-            <h3 class='blockOne'>各国首都列表</h3>
-            <a href="#/soudu" class="btn btn-primary" role="button">进入</a>
+            <img class='imageOne' src="../assets/转大写.png" alt="...">
+            <h3 class='blockOne'><b>数字转大写</b></h3>
+            <p class="illustration">数字转成中文大写</p>
+            <a href="#/daxie" class="btn btn-primary pos" role="button">进入</a>
           </div>
         </div>
         <div class="col-sm-6 col-md-4 classOne">
           <div class="thumbnail">
-            <img class='imageOne' height="70" width="70" src="../assets/二维码.png" alt="...">
-            <h3 class='blockOne'>二维码生成</h3>
-            <a href="#/qrcode" class="btn btn-primary" role="button">进入</a>
+            <img class='imageOne' src="../assets/世界.png" alt="...">
+            <h3 class='blockOne'><b>各国首都列表</b></h3>
+            <p class="illustration">各国首都信息</p>
+            <a href="#/soudu" class="btn btn-primary pos" role="button">进入</a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 classOne">
+          <div class="thumbnail">
+            <img class='imageOne' src="../assets/二维码.png" alt="...">
+            <h3 class='blockOne'><b>二维码生成</b></h3>
+            <p class="illustration">信息保存到二维码中</p>
+            <a href="#/qrcode" class="btn btn-primary pos" role="button">进入</a>
           </div>
         </div>
       </div>
@@ -99,18 +105,21 @@
         </el-pagination>
       </div>
     </el-footer>
-    <div id="fixed-btn" style="position:fixed;">
-      <a class="go-top" href="#" title="返回顶部"><div style="{
+    <div id="fixed-btn" style="position:fixed;" @click="back_top">
+<!--      <a class="go-top" href="#" title="返回顶部">-->
+        <div style="{
         height: 50px;
         width: 50px;
         background-color: #f2f5f6;
         box-shadow: 0 0 10px rgba(0,0,0, .2);
         text-align: center;
         line-height: 40px;
-        color: #1989fa;
+        /*color: #1989fa;*/
+        color: rgb(0, 154, 97);
       }">
-        <font size="5" >UP</font>
-      </div></a>
+         UP
+        </div>
+<!--      </a>-->
     </div>
   </el-container>
 </template>
@@ -119,41 +128,95 @@
 export default {
   name: "Main",
   data() {
-    return {
-    };
+    return {};
   },
+  methods:{
+    back_top() {
+      let a = scrollY;
+      let timer = setInterval(function () {
+        if (a > 0) {
+          a -= 20;
+          scrollTo(0, a);
+        } else {
+          clearInterval(timer);
+        }
+      }, 10)
+    }
+  }
 };
 </script>
 
 <style scoped>
 .imageOne {
   position: relative;
-  left: -50px;
+  height: 70px;
+  width: 70px;
+  right: 110px;
+}
+
+/*
+进入按钮位置
+ */
+.pos {
+  background: rgb(0, 154, 97, 0.6);
+  margin-top: 20px;
+  position: relative;
+  top: 10px;
+  left: 90px;
+  border: hidden;
+}
+
+/*
+说明文本
+ */
+.illustration {
+  color: rgb(255, 170, 69);
+  position: relative;
+  top: 20px;
+  padding-left: 0;
+  text-align: left;
+}
+
+/*
+工具框
+ */
+.thumbnail {
+  padding-bottom: 20px
+}
+
+.thumbnail:hover {
+  transform: translate3d(0, -3px, 0);
+  box-shadow: 0 8px 16px 0 rgba(48, 55, 66, 0.2);
 }
 
 .blockOne {
   position: absolute;
   left: 90px;
-  top: 0px;
+  top: 0;
   font-size: 20px;
 }
 
 .classtwo {
   display: block;
   margin: 0 auto;
-  width: 80%;
+  width: 60%;
 }
 
 .classOne {
-  width: 200px;
-  height: 120px;
-  padding: 0px;
+  width: 300px;
+  height: 250px;
+  padding: 0;
   margin-right: 20px;
 }
 
 
 .titleBrand {
   font-size: 30px;
+}
+
+.btn-primary {
+  position: relative;
+  margin-right: 0;
 }
 
 #footer {
@@ -166,10 +229,5 @@ export default {
   margin-top: 800px;
   margin-left: 1600px;
 }
-
-.fixed-btn .go-top {
-  border-bottom: 1px solid #eee
-}
-
 </style>
 
