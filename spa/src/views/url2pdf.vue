@@ -11,13 +11,13 @@
                 </a>
             </nav>
 
-            <el-main class="main-conversation">
+            <main class="main-conversation">
                 <div class="main-title">
                     <img src="../img/banner.png" alt="">
                 </div>
                 <div class="input">
                     <input class="main=input" v-model="input" type="text" placeholder="请输入需要转换的网页地址">
-                    <button type="submit" @click="convert">点击转换</button>
+                    <button type="submit" @click="convert" v-loading.fullscreen.lock="fullscreenLoading">点击转换</button>
 
                 </div>
                 <div class="intro">
@@ -35,16 +35,16 @@
                     </div>
                 </div>
 
-                <Download v-bind:image="require('../img/file.png')" class="down-component">
+                <Download v-bind:image="require('../img/file.png')" id="down-component">
 
-
-                    <input type="submit" value="下载" @click="download(url)" />
-                    <p>{{ msg }}23222</p>
+                    <button type="submit" @click="download">下载</button>
+                    <!-- <input type="submit" value="下载" @click="download" /> -->
+                    <p>{{ msg }}</p>
                 </Download>
 
 
 
-            </el-main>
+            </main>
 
             <footer class="footer">
 
@@ -77,7 +77,8 @@ export default {
     data() {
         return {
             input: '',
-            msg: '32333'
+            msg: '',
+            fullscreenLoading: false
         }
     },
     components: {
@@ -86,17 +87,26 @@ export default {
     }, methods: {
         convert() {
 
-this.axios({
-method: 'POST',
-url: '/api/url2pdf',
-data: {
-'url': this.input,
-}
-}).then((response) => {
-if (response.data.status == 'good') {
-window.location.href = '/api/download?path=' + response.data.path
-}
-})
+            this.fullscreenLoading = true;
+            setTimeout(() => {
+                this.fullscreenLoading = false;
+            }, 10000);
+
+            this.axios({
+                method: 'POST',
+                url: '/api/url2pdf',
+                data: {
+                    'url': this.input,
+                }
+            }).then((response) => {
+                if (response.data.status == 'good') {
+                    this.msg = response.data.path
+
+                }
+            })
+        },
+        download() {
+            window.location.href = '/api/download?path=' + this.msg
         }
 
     }
@@ -167,7 +177,7 @@ window.location.href = '/api/download?path=' + response.data.path
     font-weight: bold;
 }
 
-.el-main {
+main {
     padding: 20px 20vw;
     height: 630px;
 }
@@ -206,7 +216,7 @@ window.location.href = '/api/download?path=' + response.data.path
 .input button {
     border: none;
     position: relative;
-    right: 80px;
+    right: 93px;
     top: 2px;
     height: 45px;
 
@@ -223,7 +233,8 @@ window.location.href = '/api/download?path=' + response.data.path
 
 
 .intro {
-    margin-top: 10%;
+    margin-top: 5vh;
+    margin-bottom: 2vh;
     display: flex;
     /* flex-direction: row-reverse; */
     justify-content: space-around;
@@ -239,14 +250,14 @@ window.location.href = '/api/download?path=' + response.data.path
     margin-bottom: 10px;
 }
 
-.down-component p {
+#down-component p {
     position: relative;
     top: 25px;
-    right: 200px;
+    right: 230px;
     color: #4c92d3;
 }
 
-input[type="submit"] {
+#down-component button {
 
 
     display: block;
@@ -263,7 +274,7 @@ input[type="submit"] {
 
 }
 
-input[type="submit"]:hover {
+#down-component button:hover {
     background: hsl(168, 34%, 72%);
     box-shadow: 0 0 50px #ccc;
 }

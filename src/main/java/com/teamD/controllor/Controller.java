@@ -161,11 +161,20 @@ public class Controller {
     public String convert(@RequestBody Map<String, String> data, HttpServletResponse response) {
         String responseJson;
         String url = data.get("url");
-        String[] split = url.split("\\.");
-        String name = split[0];
-        String[] split1 = name.split("//");
-        String realname = split1[1];
-        String path = "E:\\" + realname + ".pdf";
+
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        Date today = Calendar.getInstance()
+                .getTime();
+        String realname= formatter.format(today);
+
+
+
+//        String[] split = url.split("\\.");
+//        String name = split[0];
+//        String[] split1 = name.split("//");
+//        String realname = split1[1];
+        String path = "src/main/resources/convertedPDFs/" + realname + ".pdf";
         Config.setDefaultSecret("J0uMB0UBPUgTI3zJ");
         ConvertApi.convertUrl(url, path);
         File convertedfile = new File(path);
@@ -180,7 +189,7 @@ public class Controller {
     //
     @GetMapping("/download")
     public HttpServletResponse download(@RequestParam("path") String realname, HttpServletResponse response) {
-        String path = "E:\\" + realname + ".pdf";
+        String path = "src/main/resources/convertedPDFs/" + realname + ".pdf";
         File convertedfile = new File(path);
         try {
             // path是指欲下载的文件的路径。
