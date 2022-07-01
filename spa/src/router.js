@@ -12,7 +12,6 @@ import Encdec from './views/encdec.vue'
 import Daxie from './views/daxie.vue'
 import Hexstr from './views/hexstr.vue'
 import Url2pdf from './views/url2pdf.vue'
-import Blood from './views/blood.vue'
 import Store from './views/store.vue'
 import Soudu from './views/soudu'
 Vue.use(Router)
@@ -27,11 +26,6 @@ export default new Router({
             path: '/404',
             name: '404',
             component: Error404
-        },
-        {
-            path: '/blood',
-            name: 'Blood',
-            component: Blood
         },
         {
             path: '/soudu',
