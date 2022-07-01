@@ -12,6 +12,7 @@ import Encdec from './views/encdec.vue'
 import Daxie from './views/daxie.vue'
 import Hexstr from './views/hexstr.vue'
 import Url2pdf from './views/url2pdf.vue'
+import Url2pdfon from './views/url2pdfon.vue'
 import Store from './views/store.vue'
 import Soudu from './views/soudu'
 Vue.use(Router)
@@ -95,6 +96,11 @@ export default new Router({
             path: '/url2pdf',
             name: 'Url2pdf',
             component: Url2pdf
+        },
+        {
+            path: '/url2pdfon',
+            name: 'Url2pdfon',
+            component: Url2pdfon
         }
     ]
 });
