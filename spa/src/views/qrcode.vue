@@ -26,10 +26,7 @@
               </div>
               <button type="submit" class="btn btn-default">搜索</button>
             </form>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#/login">登录</a></li>
-              <li class="dropdown"><a href="#/register">开放注册</a></li>
-            </ul>
+        
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>

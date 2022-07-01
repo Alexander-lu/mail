@@ -44,7 +44,13 @@
         十六进制HEX转字符串
       </button>
     </el-main>
-    <el-footer>Footer</el-footer>
+    <el-footer>
+      <div class="block" id="footer">
+        <span><a href="#/main">主页</a></span>
+        <br>
+        <span>TeamD - CMX CYM FXD LKJ winson ZJM</span>
+      </div>
+    </el-footer>
   </el-container>
 
 
@@ -84,6 +90,11 @@ export default {
 </script>
 
 <style scoped>
+#footer {
+  height: 100px;
+  margin-top: 600px;
+  /* background-color: #ffc0cb; */
+}
 .imageOne {
   position: relative;
   left: -50px;

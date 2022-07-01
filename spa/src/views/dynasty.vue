@@ -308,7 +308,13 @@
         </div>
       </div>
     </el-main>
-    <el-footer>Footer</el-footer>
+      <el-footer>
+      <div class="block" id="footer">
+        <span><a href="#/main">主页</a></span>
+        <br>
+        <span>TeamD - CMX CYM FXD LKJ winson ZJM</span>
+      </div>
+    </el-footer>
   </el-container>
 
 
@@ -340,6 +346,11 @@ th{
 
 p {
   float: left;
+}
+#footer {
+  height: 100px;
+  margin-top: 600px;
+  /* background-color: #ffc0cb; */
 }
 </style>
 

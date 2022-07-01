@@ -44,7 +44,13 @@
       <button @click="decode" type="button" class="btn btn-default btn-lg"> 解密
       </button>
     </el-main>
-    <el-footer>Footer</el-footer>
+      <el-footer>
+      <div class="block" id="footer">
+        <span><a href="#/main">主页</a></span>
+        <br>
+        <span>TeamD - CMX CYM FXD LKJ winson ZJM</span>
+      </div>
+    </el-footer>
   </el-container>
 
 
@@ -106,6 +112,11 @@ export default {
 <style scoped>
 .titleBrand {
   font-size: 30px;
+}
+#footer {
+  height: 100px;
+  margin-top: 600px;
+  /* background-color: #ffc0cb; */
 }
 </style>
 
