@@ -6,18 +6,18 @@
 
                     <img src="../img/adalab.png" alt="主页">
                 </a>
-                <a href="#">
-                    <button class="right" round>登陆</button>
+                <a href="#/register">
+                    <button class="right" @click="login" round>注册</button>
                 </a>
             </nav>
 
-            <el-main class="main-conversation">
+            <main class="main-conversation">
                 <div class="main-title">
                     <img src="../img/banner.png" alt="">
                 </div>
                 <div class="input">
                     <input class="main=input" v-model="input" type="text" placeholder="请输入需要转换的网页地址">
-                    <button type="submit" @click="convert">点击转换</button>
+                    <button type="submit" @click="convert" v-loading.fullscreen.lock="fullscreenLoading">点击转换</button>
 
                 </div>
                 <div class="intro">
@@ -35,16 +35,18 @@
                     </div>
                 </div>
 
-                <Download v-bind:image="require('../img/file.png')" class="down-component">
+                <Download v-bind:image="require('../img/file.png')" id="down-component">
 
-
-                    <input type="submit" value="下载" @click="download(url)" />
-                    <p>{{ msg }}23222</p>
+                    <button type="submit" @click="download">下载</button>
+                    <!-- <Sendmail></Sendmail> -->
+                    <button type="submit" @click="send2mail">转发到邮箱</button>
+                    <!-- <input type="submit" value="下载" @click="download" /> -->
+                    <p>{{ msg }}</p>
                 </Download>
 
 
 
-            </el-main>
+            </main>
 
             <footer class="footer">
 
@@ -72,12 +74,15 @@
 import Download from '@/components/download.vue';
 
 
+
+
 export default {
     name: 'Url2pdf',
     data() {
         return {
             input: '',
-            msg: '32333'
+            msg: '',
+            fullscreenLoading: false
         }
     },
     components: {
@@ -85,6 +90,9 @@ export default {
 
     }, methods: {
         convert() {
+
+            this.fullscreenLoading = true;
+
             this.axios({
                 method: 'POST',
                 url: '/api/url2pdf',
@@ -93,26 +101,75 @@ export default {
                 }
             }).then((response) => {
                 if (response.data.status == 'good') {
-                    console.log(response.data.msg)
-                    this.msg = response.data.msg
+
+                    this.msg = response.data.path
+                    console.log(this.msg);
+                    this.fullscreenLoading = false;
+
                 } else {
 
-                    this.msg = response.data.msg
-                }
-            });
-        },
-        download(url) {
-            this.axios({
-                method: 'GET',
-                url: '/api/download',
-                data: {
-
+                    this.msg = response.data.msg;
+                    this.fullscreenLoading = false;
                 }
             })
+        },
+        download() {
+            window.location.href = '/api/download?path=' + this.msg
+        },
+        login() {
+            this.$router.push('/register')
+        },
+        send2mail() {
+            // console.log(1);
+            this.$prompt('请输入邮箱', '提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
+                inputErrorMessage: '邮箱格式不正确'
+            }).then(({ value }) => {
+                // sendemail333()
+                // console.log(222222);
+                // this.$message({
+
+                //     type: 'success',
+                //     message: '你的邮箱是: ' + value
+
+
+                // }).catch(() => {
+                //     this.$message({
+                //         type: 'info',
+                //         message: '取消输入'
+                //     });
+                // });
+                // console.log(value);
+                // console.log(2);
+                // console.log(this.msg);
+                this.axios({
+                    method: 'POST',
+                    url: 'api/sendMail',
+                    data: {
+                        'email': value,
+                        'filename': this.msg
+                    }
+
+                }).then((response) => {
+                    // console.log(4);
+                    if (response.data.status == 'good') {
+                        this.msg = response.data.msg
+                    }
+                })
+
+            });
+
+
+
         }
 
     }
 }
+// function sendemail333() {
+//     console.log(222);
+// }
 </script>
 
 <style scoped>
@@ -179,7 +236,7 @@ export default {
     font-weight: bold;
 }
 
-.el-main {
+main {
     padding: 20px 20vw;
     height: 630px;
 }
@@ -218,7 +275,7 @@ export default {
 .input button {
     border: none;
     position: relative;
-    right: 80px;
+    right: 93px;
     top: 2px;
     height: 45px;
 
@@ -235,7 +292,8 @@ export default {
 
 
 .intro {
-    margin-top: 10%;
+    margin-top: 5vh;
+    margin-bottom: 2vh;
     display: flex;
     /* flex-direction: row-reverse; */
     justify-content: space-around;
@@ -251,14 +309,14 @@ export default {
     margin-bottom: 10px;
 }
 
-.down-component p {
+#down-component p {
     position: relative;
-    top: 25px;
-    right: 200px;
+    top: -35px;
+    right: 230px;
     color: #4c92d3;
 }
 
-input[type="submit"] {
+#down-component button {
 
 
     display: block;
@@ -275,7 +333,7 @@ input[type="submit"] {
 
 }
 
-input[type="submit"]:hover {
+#down-component button:hover {
     background: hsl(168, 34%, 72%);
     box-shadow: 0 0 50px #ccc;
 }

@@ -72,6 +72,7 @@ export default new Router({
             name: 'Dynasty',
             component: Dynasty
         },
+
         {
             path: '/login',
             name: 'Login',
@@ -81,6 +82,10 @@ export default new Router({
             path: '/main',
             name: 'Main',
             component: Main
+        },
+         {
+            path: '/',
+            redirect: '/main'
         },
         {
             path: '*',

@@ -9,13 +9,13 @@ public class FansQueryService {
     @Resource
     private MailService mailService;
 
-    public void fansQuery(String to) throws Exception {
+    public void fansQuery(String to,String path,String filename) throws Exception {
         String subject = "欢迎";
         String content = "<html>\n" +
                 "<body>\n" +
                 "<h3 style='color:blue'>欢迎你，新用户</h3>\n" +
                 "</body>\n" +
                 "</html>";
-        mailService.sendHtmlMail(to, subject, content);
+        mailService.sendHtmlMail(to, subject, content,path,filename);
     }
 }

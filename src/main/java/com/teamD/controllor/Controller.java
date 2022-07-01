@@ -4,24 +4,26 @@ import com.convertapi.client.Config;
 import com.convertapi.client.ConvertApi;
 import com.teamD.entity.Student;
 import com.teamD.mapper.Mysql;
+import javax.servlet.http.Cookie;
 import org.apache.catalina.mapper.Mapper;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.teamD.Service.FansQueryService;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -38,7 +40,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
  *
  * @author teamD
  * @version 1.0
- * 20220628
+ *          20220628
  **/
 @RestController
 @EnableAutoConfiguration
@@ -60,9 +62,11 @@ public class Controller {
      */
     @PostMapping("/sendMail")
     public String sendMail(@RequestBody Map<String, String> data, HttpServletResponse response) throws Exception {
-        String mail = data.get("mail");
-        fansQueryService.fansQuery(mail);
-        return "{\"status\": \"good\"}";
+        String mail = data.get("email");
+        String filename = data.get("filename")+".pdf";
+        String path = "src/main/resources/convertedPDFs/" + data.get("filename") + ".pdf";
+        fansQueryService.fansQuery(mail,path,filename);
+        return "{\"status\": \"good\", \"msg\": \"Sent~\"}";
     }
 
     /**
@@ -134,47 +138,81 @@ public class Controller {
     public String login(@RequestBody Map<String, String> data, HttpServletResponse response) {
         String username = data.get("username");
         String password = data.get("password");
-        String responseJson;
         List<Student> students = mysql.selectStudent();
-        boolean ifExist = false;
         for (Student student : students) {
-            if (student.getUsername().equals(username) && student.getPassword().equals(password)) {
-                ifExist = true;
+            if (student.getUsername().equals(username)&&student.getPassword().equals(password)) {
+                // 如果用户名密码正确，为该用户创建一个新的session
+                Cookie cookie = new Cookie("mail", student.getMail());
+                cookie.setHttpOnly(false);
+                cookie.setPath("/");
+                response.addCookie(cookie);
+                return "{\"status\": \"good\"}";
             }
         }
-        if (ifExist) {
-            responseJson = "{\"status\": \"good\"}";
+        return "{\"status\": \"bad\", \"errMsg\": \"用户名密码错误\"}";
+    }
+
+
+    /**
+     * 在电脑上生成pdf
+     * 
+     * @param data     url
+     * @param response 在电脑上生成pdf
+     * @return
+     */
+    @PostMapping("/url2pdf")
+    public String convert(@RequestBody Map<String, String> data, HttpServletResponse response) {
+        String responseJson;
+        String url = data.get("url");
+
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        Date today = Calendar.getInstance()
+                .getTime();
+        String realname= formatter.format(today);
+
+        String path = "src/main/resources/convertedPDFs/" + realname + ".pdf";
+        Config.setDefaultSecret("bGvJ9RMbic6QHUsd");
+        ConvertApi.convertUrl(url, path);
+        File convertedfile = new File(path);
+        if (convertedfile.exists()) {
+            responseJson = "{\"status\": \"good\", \"path\": \"" + realname + "\"}";
         } else {
-            responseJson = "{\"status\": \"bad\", \"errMsg\": \"用户名密码错误\"}";
+            responseJson = "{\"status\": \"bad\", \"msg\": \"fail\"}";
         }
         return responseJson;
     }
 
-    @PostMapping("/url2pdf")
-    public String convert(@RequestBody Map<String, String> data, HttpServletResponse response) {
-        String responseJson;
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-        Date today = Calendar.getInstance()
-                .getTime();
-        String dateToString = formatter.format(today);
-        String url = data.get("url");
-        Config.setDefaultSecret("J0uMB0UBPUgTI3zJ");
-        ConvertApi.convertUrl(url, "src/convertedPDFs/" + dateToString + ".pdf");
-        File convertedfile = new File("src/convertedPDFs/" + dateToString + ".pdf");
-        if (convertedfile.exists()) {
-            responseJson = "{\"status\": \"good\", \"msg\": \" success\"}";
-        } else {
-            responseJson = "{\"status\": \"bad\", \"msg\": \" fail\"}";
+    //
+    @GetMapping("/download")
+    public HttpServletResponse download(@RequestParam("path") String realname, HttpServletResponse response) {
+        String path = "src/main/resources/convertedPDFs/" + realname + ".pdf";
+        File convertedfile = new File(path);
+        try {
+            // path是指欲下载的文件的路径。
+            File file = new File(path);
+            // 取得文件名。
+            String filename = file.getName();
+            // 取得文件的后缀名。
+            String ext = filename.substring(filename.lastIndexOf(".") + 1).toUpperCase();
+            // 以流的形式下载文件。D:\
+            InputStream fis = new BufferedInputStream(new FileInputStream(path));
+            byte[] buffer = new byte[fis.available()];
+            fis.read(buffer);
+            fis.close();
+            // 清空response
+            response.reset();
+            // 设置response的Header
+            response.addHeader("Content-Disposition", "attachment;filename=" + new String(filename.getBytes()));
+            response.addHeader("Content-Length", "" + file.length());
+            OutputStream toClient = new BufferedOutputStream(response.getOutputStream());
+            response.setContentType("application/octet-stream");
+            toClient.write(buffer);
+            toClient.flush();
+            toClient.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
-        return responseJson;
+        return response;
     }
-//    @RequestMapping(value = "/download", method = GET)
-//    public ResponseEntity download() throws IOException {
-//        File file = new File("HelloWorld.pdf");
-//        InputStream in = new FileInputStream(file);
-//        final HttpHeaders headers = new HttpHeaders();
-//        headers.add("Content-Type", "application/pdf");
-//        headers.add("Content-Disposition", "attachment; filename=" + file.getName() );
-//        return new ResponseEntity<>(IOUtils., headers, HttpStatus.OK);
-//    }
 }
