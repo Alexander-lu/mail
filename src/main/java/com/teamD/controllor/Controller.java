@@ -14,7 +14,14 @@ import com.teamD.Service.FansQueryService;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -29,12 +36,13 @@ import java.util.Map;
  *
  * @author teamD
  * @version 1.0
- * 20220628
+ *          20220628
  **/
-@RestController
-@EnableAutoConfiguration
-@MapperScan("com/teamD/mapper")
-@ComponentScan("com/teamD/Service")
+
+@RestController // 服务器接收端
+@EnableAutoConfiguration // 允许自动配置
+@MapperScan("com/teamD/mapper") // 数据库交互
+@ComponentScan("com/teamD/Service") // 组件
 public class Controller {
     @Autowired
     private Mysql mysql;
@@ -141,22 +149,64 @@ public class Controller {
         return responseJson;
     }
 
+    /**
+     * 在电脑上生成pdf
+     * 
+     * @param data  url  
+     * @param response  在电脑上生成pdf
+     * @return
+     */
     @PostMapping("/url2pdf")
     public String convert(@RequestBody Map<String, String> data, HttpServletResponse response) {
         String responseJson;
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-        Date today = Calendar.getInstance()
-                .getTime();
-        String dateToString = formatter.format(today);
         String url = data.get("url");
+        String[] split = url.split("\\.");
+        String name = split[0];
+        String[] split1 = name.split("//");
+        String realname = split1[1];
+        String path = "E:\\" + realname + ".pdf";
         Config.setDefaultSecret("J0uMB0UBPUgTI3zJ");
-        ConvertApi.convertUrl(url, "src/convertedPDFs/" + dateToString + ".pdf");
-        File convertedfile = new File("src/convertedPDFs/" + dateToString + ".pdf");
+        ConvertApi.convertUrl(url, path);
+        File convertedfile = new File(path);
         if (convertedfile.exists()) {
-            responseJson = "{\"status\": \"good\", \"msg\": \" success\"}";
+            responseJson = "{\"status\": \"good\", \"path\": \"" + realname + "\"}";
         } else {
-            responseJson = "{\"status\": \"bad\", \"msg\": \" fail\"}";
+            responseJson = "{\"status\": \"bad\"}";
         }
         return responseJson;
     }
+
+    //
+    @GetMapping("/download")
+    public HttpServletResponse download(@RequestParam("path") String realname, HttpServletResponse response) {
+        String path = "E:\\" + realname + ".pdf";
+        File convertedfile = new File(path);
+        try {
+            // path是指欲下载的文件的路径。
+            File file = new File(path);
+            // 取得文件名。
+            String filename = file.getName();
+            // 取得文件的后缀名。
+            String ext = filename.substring(filename.lastIndexOf(".") + 1).toUpperCase();
+            // 以流的形式下载文件。D:\
+            InputStream fis = new BufferedInputStream(new FileInputStream(path));
+            byte[] buffer = new byte[fis.available()];
+            fis.read(buffer);
+            fis.close();
+            // 清空response
+            response.reset();
+            // 设置response的Header
+            response.addHeader("Content-Disposition", "attachment;filename=" + new String(filename.getBytes()));
+            response.addHeader("Content-Length", "" + file.length());
+            OutputStream toClient = new BufferedOutputStream(response.getOutputStream());
+            response.setContentType("application/octet-stream");
+            toClient.write(buffer);
+            toClient.flush();
+            toClient.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return response;
+    }
+
 }

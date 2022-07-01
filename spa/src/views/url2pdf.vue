@@ -80,8 +80,7 @@ export default {
                 }
             }).then((response) => {
                 if (response.data.status == 'good') {
-                    console.log(response.data.msg)
-                    this.msg = response.data.msg
+                    window.location.href = '/api/download?path=' + response.data.path
                 } else {
           
                     this.msg = response.data.msg
