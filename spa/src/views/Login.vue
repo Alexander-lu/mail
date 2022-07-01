@@ -8,18 +8,16 @@
 <p class="msg">{{message}}</p>
 </div>
 </el-main>
-      
 </template>
 
 <script>
-
 export default {
     name: "Login",
     data() {
         return {      
-           username: '',
+username: '',
 			password: '',
-            message:''
+       message:''
         };
     },
 
@@ -27,68 +25,24 @@ export default {
 
   methods: {
     login() {
-      if(isNotGood(this.username)){
       this.axios({
         method:"POST",
-        //发生请求地址
         url:"/api/login",
-        //发送数据
         data:{
             "username":this.username,
-            "password":encrypt(this.password)
+            "password":this.password
         }
-        //响应结果
+
        }).then(response=>{
            if (response.data.status == "good") {
-            this.$router.push('/main');
+            this.$router.push('/url2pdf');
           } else {
             this.message = response.data.errMsg
           }
        })
-      }else {
-     this.message = "您输入的用户名有误！"
-      }
     },
   },
 };
-/**
-   * 判断输入是不是非法的
-   */
-   function isNotGood(data) {
-    var patt1=new RegExp(/^1\d{10}$/);
-    var patt2=new RegExp(/^[a-zA-Z._-]*[a-zA-Z]+[0-9]*@bank.c(om|n)$/);
-    var patt3=new RegExp(/[._-][._-]/);
-    if(patt1.test(data)){
-        return true;
-    }else if(patt2.test(data)){
-        if(data.length>30){
-          return false;
-        }
-        if(patt3.test(data)){
-          return false;
-        }
-        return true;
-      }else{
-        return false;
-      }
-  }
-    // 加密
-    function encrypt(str, num) {
-      var newStr = "";
-      for (let i = 0; i < str.length; i++) {
-        if (str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 90) {
-          newStr += String.fromCharCode((str.charCodeAt(i) - 65 + num + 26) % 26 + 65)
-        }
-        else if (str.charCodeAt(i) >= 97 && str.charCodeAt(i) <= 122) {
-          newStr += String.fromCharCode((str.charCodeAt(i) - 97 + num + 26) % 26 + 97)
-        }
-        //特殊符号不做处理
-        else newStr += String.fromCharCode(str.charCodeAt(i));
-      }
-      // console.log(newStr);
-      return newStr;
-    }
-
 </script>
 
 <style scoped>

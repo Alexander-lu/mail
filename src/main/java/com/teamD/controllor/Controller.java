@@ -4,6 +4,7 @@ import com.convertapi.client.Config;
 import com.convertapi.client.ConvertApi;
 import com.teamD.entity.Student;
 import com.teamD.mapper.Mysql;
+import javax.servlet.http.Cookie;
 import org.apache.catalina.mapper.Mapper;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import com.teamD.Service.FansQueryService;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.BufferedInputStream;
@@ -136,21 +138,20 @@ public class Controller {
     public String login(@RequestBody Map<String, String> data, HttpServletResponse response) {
         String username = data.get("username");
         String password = data.get("password");
-        String responseJson;
         List<Student> students = mysql.selectStudent();
-        boolean ifExist = false;
         for (Student student : students) {
-            if (student.getUsername().equals(username) && student.getPassword().equals(password)) {
-                ifExist = true;
+            if (student.getUsername().equals(username)&&student.getPassword().equals(password)) {
+                // 如果用户名密码正确，为该用户创建一个新的session
+                Cookie cookie = new Cookie("mail", student.getMail());
+                cookie.setHttpOnly(false);
+                cookie.setPath("/");
+                response.addCookie(cookie);
+                return "{\"status\": \"good\"}";
             }
         }
-        if (ifExist) {
-            responseJson = "{\"status\": \"good\"}";
-        } else {
-            responseJson = "{\"status\": \"bad\", \"errMsg\": \"用户名密码错误\"}";
-        }
-        return responseJson;
+        return "{\"status\": \"bad\", \"errMsg\": \"用户名密码错误\"}";
     }
+
 
     /**
      * 在电脑上生成pdf
