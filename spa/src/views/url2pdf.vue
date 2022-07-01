@@ -6,9 +6,10 @@
 
                     <img src="../img/adalab.png" alt="主页">
                 </a>
-                <a href="#/register">
-                    <button class="right" @click="login" round>注册</button>
-                </a>
+            
+                    <button class="right" @click="register" round>注册</button>
+                      <button class="right" @click="login" round>登录</button>
+            
             </nav>
 
             <main class="main-conversation">
@@ -117,6 +118,9 @@ export default {
             window.location.href = '/api/download?path=' + this.msg
         },
         login() {
+            this.$router.push('/login')
+        },
+        register() {
             this.$router.push('/register')
         },
         send2mail() {
