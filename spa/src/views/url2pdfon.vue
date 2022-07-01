@@ -6,9 +6,9 @@
 
                     <img src="../img/adalab.png" alt="主页">
                 </a>
-                <a href="#/register">
-                    <button class="right" @click="login" round>注册</button>
-                </a>
+             
+                    <button class="right" @click="loginout" round>登出</button>
+        
             </nav>
 
             <main class="main-conversation">
@@ -72,7 +72,7 @@
 
 <script>
 import Download from '@/components/download.vue';
-
+import cookies from 'vue-cookies'
 
 
 
@@ -116,8 +116,9 @@ export default {
         download() {
             window.location.href = '/api/download?path=' + this.msg
         },
-        login() {
-            this.$router.push('/register')
+        loginout() {
+              cookies.remove("mail");
+      this.$router.push('/main');
         },
         send2mail() {
             // console.log(1);

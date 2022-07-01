@@ -35,7 +35,7 @@ username: '',
 
        }).then(response=>{
            if (response.data.status == "good") {
-            this.$router.push('/url2pdf');
+            this.$router.push('/url2pdfon');
           } else {
             this.message = response.data.errMsg
           }
