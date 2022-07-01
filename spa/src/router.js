@@ -14,6 +14,7 @@ import Hexstr from './views/hexstr.vue'
 import Url2pdf from './views/url2pdf.vue'
 import Blood from './views/blood.vue'
 import Store from './views/store.vue'
+import Soudu from './views/soudu'
 Vue.use(Router)
 export default new Router({
     routes: [
@@ -31,6 +32,11 @@ export default new Router({
             path: '/blood',
             name: 'Blood',
             component: Blood
+        },
+        {
+            path: '/soudu',
+            name: 'Soudu',
+            component: Soudu
         },
         {
             path: '/store',
@@ -83,7 +89,7 @@ export default new Router({
             name: 'Main',
             component: Main
         },
-         {
+        {
             path: '/',
             redirect: '/main'
         },
