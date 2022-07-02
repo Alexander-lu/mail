@@ -6,9 +6,9 @@
 
                     <img src="../img/adalab.png" alt="主页">
                 </a>
-             
-                    <button class="right" @click="loginout" round>登出</button>
-        
+                <button class="right" @click="admin" round>管理中心</button>
+                <button class="right" @click="loginout" round>登出</button>
+
             </nav>
 
             <main class="main-conversation">
@@ -90,19 +90,22 @@ export default {
 
     }, methods: {
         convert() {
-
+            const a = cookies.get('mail')
+            console.log(a);
             this.fullscreenLoading = true;
-
+            console.log(this);
             this.axios({
                 method: 'POST',
                 url: '/api/url2pdf',
                 data: {
                     'url': this.input,
+                    'cookiename': a
                 }
             }).then((response) => {
                 if (response.data.status == 'good') {
-
+                    console.log(cookies.get('mail'));
                     this.msg = response.data.path
+
                     console.log(this.msg);
                     this.fullscreenLoading = false;
 
@@ -117,8 +120,12 @@ export default {
             window.location.href = '/api/download?path=' + this.msg
         },
         loginout() {
-              cookies.remove("mail");
-      this.$router.push('/main');
+            cookies.remove("mail");
+            this.$router.push('/main');
+        },
+        admin() {
+            // this.$emit('admin', this.a);
+            this.$router.push('/store');
         },
         send2mail() {
             // console.log(1);

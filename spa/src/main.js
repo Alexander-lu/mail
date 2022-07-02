@@ -11,7 +11,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
-Vue.use(VueAxios , axios)
+Vue.use(VueAxios, axios)
+
+import VueCookies from 'vue-cookies'
+Vue.use(VueCookies)
 new Vue({
   render: h => h(App),
   router

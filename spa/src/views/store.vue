@@ -35,15 +35,15 @@
 
   <el-container>
     <el-header>
-      <a href="#" class="logo">AdalabTeamD</a>
+      <a href="#" class="logo">PDF文档管理中心</a>
       <div>
         <ul class="navigation">
-          <li><a href="http://192.168.1.111:3000/#/main">首页</a></li>
-          <li><a href="#">博客</a></li>
-          <li><a href="#">联系我</a></li>
+          <li><a href="/main">首页</a></li>
+          <li><a href="/url2pdfon">转换工具</a></li>
+          <!-- <li><a href="#">联系我</a></li>
           <li><a href="#">留言板</a></li>
           <li><a href="#">关于我们</a></li>
-          <li><a href="#">照片墙</a></li>
+          <li><a href="#">照片墙</a></li>  -->
         </ul>
       </div>
       <div class="search">
@@ -52,7 +52,7 @@
       </div>
     </el-header>
     <el-container
-        style="height: 70vh; width: 70vw; border: 1px solid #eee; position:absolute; margin-top: 15vh; margin-left: 15vw;">
+      style="height: 70vh; width: 70vw; border: 1px solid #eee; position:absolute; margin-top: 15vh; margin-left: 15vw;">
 
       <el-aside width="250px" style="margin-top: 60px; background-color: rgb(238, 241, 246); ">
         <el-menu :default-openeds="['1', '3']">
@@ -114,7 +114,7 @@
               <el-dropdown-item>删除</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
-          <span>user_id</span>
+          <span>{{username}}</span>
         </el-header>
 
         <el-main>
@@ -124,6 +124,11 @@
             <el-table-column prop="name" label="姓名" width="120">
             </el-table-column>
             <el-table-column prop="address" label="地址">
+            </el-table-column>
+            <el-table-column>
+
+              <button type="submit" @click="download">下载</button>
+
             </el-table-column>
           </el-table>
         </el-main>
@@ -139,6 +144,7 @@ export default {
   },
   data() {
     const item = {
+      
       date: '2022-6-30',
       name: 'user_id',
       address: 'url'
@@ -207,6 +213,8 @@ export default {
   width: 300px;
   height: 40px;
 }
+
+
 
 .el-header .search input {
   position: absolute;
@@ -277,5 +285,21 @@ export default {
 
 .el-aside {
   color: #333;
+}
+
+button {
+  border: none;
+  width: 80px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50px;
+  background-color: white;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+button:hover {
+  /* box-shadow: 10px 10px 50px #4c92d3; */
+  color: rgb(16, 206, 219);
+  font-weight: bold;
 }
 </style>

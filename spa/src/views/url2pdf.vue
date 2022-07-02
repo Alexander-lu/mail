@@ -5,10 +5,10 @@
                 <a href="https://www.adalab.cn/" class="left">
                     <img src="../img/adalab.png" alt="主页">
                 </a>
-            
-                    <button class="right" @click="register" round>注册</button>
-                      <button class="right" @click="login" round>登录</button>
-            
+
+                <button class="right" @click="register" round>注册</button>
+                <button class="right" @click="login" round>登录</button>
+
             </nav>
 
             <main class="main-conversation">
@@ -73,9 +73,6 @@
 <script>
 import Download from '@/components/download.vue';
 
-
-
-
 export default {
     name: 'Url2pdf',
     data() {
@@ -90,9 +87,9 @@ export default {
 
     }, methods: {
         convert() {
-
+           
             this.fullscreenLoading = true;
-
+         
             this.axios({
                 method: 'POST',
                 url: '/api/url2pdf',
@@ -101,9 +98,8 @@ export default {
                 }
             }).then((response) => {
                 if (response.data.status == 'good') {
-
+                   
                     this.msg = response.data.path
-                    console.log(this.msg);
                     this.fullscreenLoading = false;
 
                 } else {
@@ -173,6 +169,21 @@ export default {
 // function sendemail333() {
 //     console.log(222);
 // }
+// function storepdf() {
+//     this.axios({
+//         method: 'POST',
+//         url: '/api/insertpdf',
+//         data: {
+//             'filename': this.msg,
+//             'cookiename': VueCookies.get('mail')
+
+//         }
+//     }).then((response2) => {
+//         console.log(response2)
+//     })
+// }
+
+
 </script>
 
 <style scoped>
