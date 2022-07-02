@@ -2,6 +2,7 @@ package com.teamD.controllor;
 
 import com.convertapi.client.Config;
 import com.convertapi.client.ConvertApi;
+import com.teamD.entity.Convertedfile;
 import com.teamD.entity.Student;
 import com.teamD.mapper.Mysql;
 import javax.servlet.http.Cookie;
@@ -10,6 +11,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
 import com.teamD.Service.FansQueryService;
 
@@ -17,13 +19,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -64,7 +60,9 @@ public class Controller {
     public String sendMail(@RequestBody Map<String, String> data, HttpServletResponse response) throws Exception {
         String mail = data.get("email");
         String filename = data.get("filename")+".pdf";
-        String path = "src/main/resources/convertedPDFs/" + data.get("filename") + ".pdf";
+//        String path = "src/main/resources/convertedPDFs/" + data.get("filename") + ".pdf";
+        String resPath = ResourceUtils.getURL("classpath:").getPath();
+        String path = resPath +data.get("filename") + ".pdf";
         fansQueryService.fansQuery(mail,path,filename);
         return "{\"status\": \"good\", \"msg\": \"Sent~\"}";
     }
@@ -85,6 +83,17 @@ public class Controller {
         mysql.insertStudent(newS);
         return "{\"status\": \"good\"}";
     }
+
+
+//    @PostMapping("/insertpdf")
+//    public String insertpdf(@RequestBody Map<String, String> data, HttpServletResponse response) {
+//        String filename = data.get("filename");
+//        String cookiename = data.get("cookiename");
+//        Convertedfile file = new Convertedfile(filename,cookiename);
+//        mysql.insertFile(file);
+//        return "{\"status\": \"good\"}";
+//    }
+
 
     /**
      * 往数据库里更改账号密码
@@ -127,6 +136,12 @@ public class Controller {
         return students;
     }
 
+    @GetMapping("/selectfile")
+    List<Convertedfile> selectfile(){
+        List<Convertedfile> convertedfile=mysql.selectConvertedfile();
+        return convertedfile;
+    }
+
     /**
      * 登陆
      *
@@ -161,20 +176,31 @@ public class Controller {
      * @return
      */
     @PostMapping("/url2pdf")
-    public String convert(@RequestBody Map<String, String> data, HttpServletResponse response) {
+    public String convert(@RequestBody Map<String, String> data, HttpServletResponse response) throws FileNotFoundException {
         String responseJson;
         String url = data.get("url");
+        String mail = data.get("cookiename");
 
-
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy-HH:mm:ss");
         Date today = Calendar.getInstance()
                 .getTime();
         String realname= formatter.format(today);
-
-        String path = "src/main/resources/convertedPDFs/" + realname + ".pdf";
+        String resPath = ResourceUtils.getURL("classpath:").getPath();
+        String path = resPath + realname + ".pdf";
+//        String path = "src/main/resources/convertedPDFs/" + realname + ".pdf";
         Config.setDefaultSecret("bGvJ9RMbic6QHUsd");
         ConvertApi.convertUrl(url, path);
         File convertedfile = new File(path);
+
+        Convertedfile file = new Convertedfile(realname,mail);
+
+        try {
+            mysql.insertFile(file);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
         if (convertedfile.exists()) {
             responseJson = "{\"status\": \"good\", \"path\": \"" + realname + "\"}";
         } else {
@@ -185,8 +211,10 @@ public class Controller {
 
     //
     @GetMapping("/download")
-    public HttpServletResponse download(@RequestParam("path") String realname, HttpServletResponse response) {
-        String path = "src/main/resources/convertedPDFs/" + realname + ".pdf";
+    public HttpServletResponse download(@RequestParam("path") String realname, HttpServletResponse response) throws FileNotFoundException {
+//        String path = "src/main/resources/convertedPDFs/" + realname + ".pdf";
+        String resPath = ResourceUtils.getURL("classpath:").getPath();
+        String path = resPath + realname + ".pdf";
         File convertedfile = new File(path);
         try {
             // path是指欲下载的文件的路径。

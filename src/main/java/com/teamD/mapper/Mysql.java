@@ -1,5 +1,6 @@
 package com.teamD.mapper;
 
+import com.teamD.entity.Convertedfile;
 import com.teamD.entity.Student;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -27,6 +28,12 @@ public interface Mysql {
      */
     @Update("INSERT into user(username,password,mail) VALUES(#{username},#{password},#{mail});")
     public void insertStudent(Student student);
+    @Update("INSERT into store(a,b) VALUES(#{a},#{b});")
+    public void insertFile(Convertedfile convertedfile);
+
+//    @Update("INSERT into store(a,b) VALUES(#{a},#{b});")
+//    public void insertFile(Convertedfile filename);
+
 
     /**
      * 语法:
@@ -49,6 +56,8 @@ public interface Mysql {
     @Update("update user set username=#{username},password=#{password} where username=#{username};")
     public void updateStudent2(Student student);
 
+
+
     /**
      * MySQL 数据库使用SQL SELECT语句来查询数据。
      * SELECT column_name,column_name
@@ -60,5 +69,8 @@ public interface Mysql {
      */
     @Select("SELECT * FROM `user`;")
     public List<Student> selectStudent();
+
+    @Select("SELECT * FROM `store`;")
+    public List<Convertedfile> selectConvertedfile();
 
 }
