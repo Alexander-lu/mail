@@ -145,7 +145,7 @@ export default {
                 // console.log(this.msg);
                 this.axios({
                     method: 'POST',
-                    url: 'api/sendMail',
+                    url: '/api/sendMail',
                     data: {
                         'email': value,
                         'filename': this.msg

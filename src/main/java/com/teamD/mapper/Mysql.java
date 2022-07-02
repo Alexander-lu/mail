@@ -70,7 +70,7 @@ public interface Mysql {
     @Select("SELECT * FROM `user`;")
     public List<Student> selectStudent();
 
-    @Select("SELECT * FROM `store`;")
-    public List<Convertedfile> selectConvertedfile();
+    @Select("SELECT * FROM `store` where b like '${cookiename}';")
+    public List<Convertedfile> selectConvertedfile(String cookiename);
 
 }

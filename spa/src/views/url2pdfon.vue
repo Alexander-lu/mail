@@ -72,6 +72,7 @@
 
 <script>
 import Download from '@/components/download.vue';
+
 import cookies from 'vue-cookies'
 
 
@@ -125,7 +126,15 @@ export default {
         },
         admin() {
             // this.$emit('admin', this.a);
-            this.$router.push('/store');
+
+            this.$router.push(
+                {
+                    path: '/store',
+                    query: {
+                        cookiename: cookies.get('mail')
+                    }
+                },
+            );
         },
         send2mail() {
             // console.log(1);
@@ -154,7 +163,7 @@ export default {
                 // console.log(this.msg);
                 this.axios({
                     method: 'POST',
-                    url: 'api/sendMail',
+                    url: '/api/sendMail',
                     data: {
                         'email': value,
                         'filename': this.msg

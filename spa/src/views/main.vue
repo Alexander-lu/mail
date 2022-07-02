@@ -35,6 +35,8 @@
                 <img class='imageOne' src="../assets/pdf.png" alt="...">
                 <h3 class='blockOne'><b>url转pdf</b></h3>
                 <p class="illustration">将网页转换成PDF文档</p>
+                <p class="classification">[转换类]</p>
+                <img src="../img/team-title.png" alt="" class="imgTeam">
                 <a href="#/url2pdf" class="btn btn-primary pos" role="button">进入</a>
                 <a href="#/store" class="btn btn-primary pos" role="button">查看</a>
               </div>
@@ -44,6 +46,8 @@
                 <img class='imageOne' src="../assets/朝代表.png" alt="...">
                 <h3 class='blockOne'><b>国朝代表</b></h3>
                 <p class="illustration">中国历代详细信息</p>
+                <p class="classification">[查询类]</p>
+                <img src="../img/team-title.png" alt="" class="imgTeam">
                 <a href="#/dynasty" class="btn btn-primary pos" role="button">进入</a>
               </div>
             </div>
@@ -52,6 +56,8 @@
                 <img class='imageOne' src="../assets/加密.png" alt="...">
                 <h3 class='blockOne'><b>加密解密</b></h3>
                 <p class="illustration">生成加密文本</p>
+                <p class="classification">[转换类]</p>
+                <img src="../img/team-title.png" alt="" class="imgTeam">
                 <a href="#/encdec" class="btn btn-primary pos" role="button">进入</a>
               </div>
             </div>
@@ -60,6 +66,8 @@
                 <img class='imageOne' src="../assets/转16.png" alt="...">
                 <h3 class='blockOne'><b>str转hex</b></h3>
                 <p class="illustration">字符串转换成16进制</p>
+                <p class="classification">[转换类]</p>
+                <img src="../img/team-title.png" alt="" class="imgTeam">
                 <a href="#/hexstr" class="btn btn-primary pos" role="button">进入</a>
               </div>
             </div>
@@ -68,6 +76,8 @@
                 <img class='imageOne' src="../assets/转大写.png" alt="...">
                 <h3 class='blockOne'><b>数字转大写</b></h3>
                 <p class="illustration">数字转成中文大写</p>
+                <p class="classification">[转换类]</p>
+                <img src="../img/team-title.png" alt="" class="imgTeam">
                 <a href="#/daxie" class="btn btn-primary pos" role="button">进入</a>
               </div>
             </div>
@@ -76,6 +86,8 @@
                 <img class='imageOne' src="../assets/世界.png" alt="...">
                 <h3 class='blockOne'><b>各国首都列表</b></h3>
                 <p class="illustration">各国首都信息</p>
+                <p class="classification">[查询类]</p>
+                <img src="../img/team-title.png" alt="" class="imgTeam">
                 <a href="#/soudu" class="btn btn-primary pos" role="button">进入</a>
               </div>
             </div>
@@ -84,6 +96,8 @@
                 <img class='imageOne' src="../assets/二维码.png" alt="...">
                 <h3 class='blockOne'><b>二维码生成</b></h3>
                 <p class="illustration">信息保存到二维码中</p>
+                <p class="classification">[二维码类]</p>
+                <img src="../img/team-title.png" alt="" class="imgTeam">
                 <a href="#/qrcode" class="btn btn-primary pos" role="button">进入</a>
               </div>
             </div>
@@ -95,6 +109,8 @@
                 <img class='imageOne' src="../assets/pdf.png" alt="...">
                 <h3 class='blockOne'><b>url转pdf</b></h3>
                 <p class="illustration">将网页转换成PDF文档</p>
+                <p class="classification">[转换类]</p>
+                <img src="../img/team-title.png" alt="" class="imgTeam">
                 <a href="#/url2pdf" class="btn btn-primary pos" role="button">进入</a>
                 <a href="#/store" class="btn btn-primary pos" role="button">查看</a>
               </div>
@@ -104,6 +120,8 @@
                 <img class='imageOne' src="../assets/加密.png" alt="...">
                 <h3 class='blockOne'><b>加密解密</b></h3>
                 <p class="illustration">生成加密文本</p>
+                <p class="classification">[转换类]</p>
+                <img src="../img/team-title.png" alt="" class="imgTeam">
                 <a href="#/encdec" class="btn btn-primary pos" role="button">进入</a>
               </div>
             </div>
@@ -112,6 +130,8 @@
                 <img class='imageOne' src="../assets/转16.png" alt="...">
                 <h3 class='blockOne'><b>str转hex</b></h3>
                 <p class="illustration">字符串转换成16进制</p>
+                <p class="classification">[转换类]</p>
+                <img src="../img/team-title.png" alt="" class="imgTeam">
                 <a href="#/hexstr" class="btn btn-primary pos" role="button">进入</a>
               </div>
             </div>
@@ -120,6 +140,8 @@
                 <img class='imageOne' src="../assets/转大写.png" alt="...">
                 <h3 class='blockOne'><b>数字转大写</b></h3>
                 <p class="illustration">数字转成中文大写</p>
+                <p class="classification">[转换类]</p>
+                <img src="../img/team-title.png" alt="" class="imgTeam">
                 <a href="#/daxie" class="btn btn-primary pos" role="button">进入</a>
               </div>
             </div>
@@ -130,6 +152,8 @@
                 <img class='imageOne' src="../assets/朝代表.png" alt="...">
                 <h3 class='blockOne'><b>国朝代表</b></h3>
                 <p class="illustration">中国历代详细信息</p>
+                <p class="classification">[查询类]</p>
+                <img src="../img/team-title.png" alt="" class="imgTeam">
                 <a href="#/dynasty" class="btn btn-primary pos" role="button">进入</a>
               </div>
             </div>
@@ -138,6 +162,8 @@
                 <img class='imageOne' src="../assets/世界.png" alt="...">
                 <h3 class='blockOne'><b>各国首都列表</b></h3>
                 <p class="illustration">各国首都信息</p>
+                <p class="classification">[查询类]</p>
+                <img src="../img/team-title.png" alt="" class="imgTeam">
                 <a href="#/soudu" class="btn btn-primary pos" role="button">进入</a>
               </div>
             </div>
@@ -148,6 +174,8 @@
                 <img class='imageOne' src="../assets/二维码.png" alt="...">
                 <h3 class='blockOne'><b>二维码生成</b></h3>
                 <p class="illustration">信息保存到二维码中</p>
+                <p class="classification">[二维码类]</p>
+                <img src="../img/team-title.png" alt="" class="imgTeam">
                 <a href="#/qrcode" class="btn btn-primary pos" role="button">进入</a>
               </div>
             </div>
@@ -217,6 +245,18 @@ export default {
   height: 70px;
   width: 70px;
   right: 110px;
+}
+
+.classification{
+  position: relative;
+  top: -85px;
+  right: -110px;
+}
+
+.imgTeam{
+  position: absolute;
+  height: 16px;
+  top: 180px;
 }
 
 /*

@@ -18,6 +18,10 @@ public class Convertedfile {
         this.b = b;
     }
 
+    public Convertedfile(String b) {
+        this.b = b;
+    }
+
     public Convertedfile(String a, String b) {
         this.a = a;
         this.b = b;

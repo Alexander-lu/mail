@@ -114,11 +114,11 @@
               <el-dropdown-item>删除</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
-          <span>{{username}}</span>
+          <span>{{ username }}</span>
         </el-header>
 
         <el-main>
-          <el-table :data="tableData">
+          <!-- <el-table :data="tableData">
             <el-table-column prop="date" label="日期" width="140">
             </el-table-column>
             <el-table-column prop="name" label="姓名" width="120">
@@ -130,7 +130,19 @@
               <button type="submit" @click="download">下载</button>
 
             </el-table-column>
-          </el-table>
+          </el-table> -->
+          <div class="input">
+
+
+            <el-input class="ww2" v-model="inputname" placeholder="请输入文件名"> </el-input>
+            <button style="width: 150px;" type="primary" plain @click="download">下载</button>
+          </div>
+
+
+
+
+          <textarea class="ww" v-model="filename" clearable placeholder="请输入账号"></textarea>
+
         </el-main>
       </el-container>
     </el-container>
@@ -138,26 +150,78 @@
 </template>
 
 <script>
+import cookies from 'vue-cookies'
+
 export default {
+
   name: 'Store',
   components: {
   },
   data() {
-    const item = {
-      
-      date: '2022-6-30',
-      name: 'user_id',
-      address: 'url'
-    };
     return {
-      tableData: Array(20).fill(item)
+      filename: "",
+      inputname: ""
+
     }
+  },
+  created: function () {
+
+    this.axios({
+      method: 'GET',
+      url: '/api/selectfile',
+      params: {
+        'cookiename': cookies.get('mail'),
+
+      }
+    }).then((response) => {
+      console.log(response.data)
+      const array = response.data
+
+      var filee = ""
+      array.forEach((a) => {
+        filee += a.a + "\n"
+        console.log(filee);
+
+      });
+      this.filename = filee
+    })
+  },
+  methods: {
+    download() {
+      window.location.href = '/api/download?path=' + this.inputname
+    },
   }
 
 };
 </script>
 
 <style scoped>
+.el-main .input {
+  display: flex;
+  position: relative;
+  top: 100px;
+  left: 222px;
+
+  width: 400px;
+  height: 50px;
+
+}
+
+
+
+
+
+.ww {
+  position: relative;
+
+  top: 140px;
+  right: 100px;
+  width: 500px;
+  height: 200px;
+  font: 3em sans-serif;
+}
+
+
 * {
   margin: 0;
   padding: 0;

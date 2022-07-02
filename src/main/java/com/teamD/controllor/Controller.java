@@ -137,8 +137,12 @@ public class Controller {
     }
 
     @GetMapping("/selectfile")
-    List<Convertedfile> selectfile(){
-        List<Convertedfile> convertedfile=mysql.selectConvertedfile();
+    List<Convertedfile>selectfile(@RequestParam Map<String, String> data){
+        String cookiename = data.get("cookiename");
+
+        List<Convertedfile> convertedfile=mysql.selectConvertedfile(cookiename);
+
+
         return convertedfile;
     }
 
